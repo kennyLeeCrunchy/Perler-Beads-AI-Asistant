@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+runtime/*.log
+runtime/uploads/*
+runtime/generated/*
+runtime/exports/*
+!runtime/uploads/.gitkeep
+!runtime/generated/.gitkeep
+!runtime/exports/.gitkeep

@@ -1,0 +1,1 @@
+"""Pindou AI demo application."""

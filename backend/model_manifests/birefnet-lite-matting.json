@@ -1,0 +1,13 @@
+{
+  "model_id": "ZhengPeng7/BiRefNet_lite-matting",
+  "revision": "99c33412e3f58e1f33187abdc8c435c645243690",
+  "license_declared": "MIT",
+  "license_source": "https://huggingface.co/ZhengPeng7/BiRefNet_lite-matting",
+  "source_commit": "https://huggingface.co/ZhengPeng7/BiRefNet_lite-matting/commit/99c33412e3f58e1f33187abdc8c435c645243690",
+  "weight_file": "model.safetensors",
+  "weight_size_bytes": 88965896,
+  "weight_sha256": "ce8bcfc045e336322c0424a5863dcfb7e9ce8fed0a5fd4d1b2b20adf12d97243",
+  "local_runtime_path": "APP/backend/runtime/models/birefnet-lite-matting",
+  "runtime_load_policy": "local_files_only",
+  "training_data_license_review": "Required before production launch; model-level MIT metadata does not replace a dataset provenance review."
+}

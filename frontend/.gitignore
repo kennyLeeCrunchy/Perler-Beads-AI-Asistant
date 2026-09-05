@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.npm-cache/
+.chrome-qa-*/
+*.log
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts

@@ -1,0 +1,2654 @@
+[
+  {
+    "code": "A1",
+    "series": "A",
+    "name": "A1",
+    "name_zh": "A1",
+    "hex": "#FFF6D4",
+    "rgb": [
+      255,
+      246,
+      212
+    ]
+  },
+  {
+    "code": "A2",
+    "series": "A",
+    "name": "A2",
+    "name_zh": "A2",
+    "hex": "#F6F9E5",
+    "rgb": [
+      246,
+      249,
+      229
+    ]
+  },
+  {
+    "code": "A3",
+    "series": "A",
+    "name": "A3",
+    "name_zh": "A3",
+    "hex": "#FFFBAA",
+    "rgb": [
+      255,
+      251,
+      170
+    ]
+  },
+  {
+    "code": "A4",
+    "series": "A",
+    "name": "A4",
+    "name_zh": "A4",
+    "hex": "#FFDF58",
+    "rgb": [
+      255,
+      223,
+      88
+    ]
+  },
+  {
+    "code": "A5",
+    "series": "A",
+    "name": "A5",
+    "name_zh": "A5",
+    "hex": "#FECF4D",
+    "rgb": [
+      254,
+      207,
+      77
+    ]
+  },
+  {
+    "code": "A6",
+    "series": "A",
+    "name": "A6",
+    "name_zh": "A6",
+    "hex": "#FFA80C",
+    "rgb": [
+      255,
+      168,
+      12
+    ]
+  },
+  {
+    "code": "A7",
+    "series": "A",
+    "name": "A7",
+    "name_zh": "A7",
+    "hex": "#FF8837",
+    "rgb": [
+      255,
+      136,
+      55
+    ]
+  },
+  {
+    "code": "A8",
+    "series": "A",
+    "name": "A8",
+    "name_zh": "A8",
+    "hex": "#EAC431",
+    "rgb": [
+      234,
+      196,
+      49
+    ]
+  },
+  {
+    "code": "A9",
+    "series": "A",
+    "name": "A9",
+    "name_zh": "A9",
+    "hex": "#F1AA8F",
+    "rgb": [
+      241,
+      170,
+      143
+    ]
+  },
+  {
+    "code": "A10",
+    "series": "A",
+    "name": "A10",
+    "name_zh": "A10",
+    "hex": "#FF8F42",
+    "rgb": [
+      255,
+      143,
+      66
+    ]
+  },
+  {
+    "code": "A11",
+    "series": "A",
+    "name": "A11",
+    "name_zh": "A11",
+    "hex": "#FFE1A1",
+    "rgb": [
+      255,
+      225,
+      161
+    ]
+  },
+  {
+    "code": "A12",
+    "series": "A",
+    "name": "A12",
+    "name_zh": "A12",
+    "hex": "#F4B39C",
+    "rgb": [
+      244,
+      179,
+      156
+    ]
+  },
+  {
+    "code": "A13",
+    "series": "A",
+    "name": "A13",
+    "name_zh": "A13",
+    "hex": "#FFB100",
+    "rgb": [
+      255,
+      177,
+      0
+    ]
+  },
+  {
+    "code": "A14",
+    "series": "A",
+    "name": "A14",
+    "name_zh": "A14",
+    "hex": "#FF6510",
+    "rgb": [
+      255,
+      101,
+      16
+    ]
+  },
+  {
+    "code": "A15",
+    "series": "A",
+    "name": "A15",
+    "name_zh": "A15",
+    "hex": "#DAF05C",
+    "rgb": [
+      218,
+      240,
+      92
+    ]
+  },
+  {
+    "code": "A16",
+    "series": "A",
+    "name": "A16",
+    "name_zh": "A16",
+    "hex": "#F9FBBE",
+    "rgb": [
+      249,
+      251,
+      190
+    ]
+  },
+  {
+    "code": "A17",
+    "series": "A",
+    "name": "A17",
+    "name_zh": "A17",
+    "hex": "#FFD976",
+    "rgb": [
+      255,
+      217,
+      118
+    ]
+  },
+  {
+    "code": "A18",
+    "series": "A",
+    "name": "A18",
+    "name_zh": "A18",
+    "hex": "#FFCA9A",
+    "rgb": [
+      255,
+      202,
+      154
+    ]
+  },
+  {
+    "code": "A19",
+    "series": "A",
+    "name": "A19",
+    "name_zh": "A19",
+    "hex": "#EC7A92",
+    "rgb": [
+      236,
+      122,
+      146
+    ]
+  },
+  {
+    "code": "A20",
+    "series": "A",
+    "name": "A20",
+    "name_zh": "A20",
+    "hex": "#E5BE55",
+    "rgb": [
+      229,
+      190,
+      85
+    ]
+  },
+  {
+    "code": "A21",
+    "series": "A",
+    "name": "A21",
+    "name_zh": "A21",
+    "hex": "#FFE596",
+    "rgb": [
+      255,
+      229,
+      150
+    ]
+  },
+  {
+    "code": "A22",
+    "series": "A",
+    "name": "A22",
+    "name_zh": "A22",
+    "hex": "#F7E898",
+    "rgb": [
+      247,
+      232,
+      152
+    ]
+  },
+  {
+    "code": "A23",
+    "series": "A",
+    "name": "A23",
+    "name_zh": "A23",
+    "hex": "#F0CBB1",
+    "rgb": [
+      240,
+      203,
+      177
+    ]
+  },
+  {
+    "code": "A24",
+    "series": "A",
+    "name": "A24",
+    "name_zh": "A24",
+    "hex": "#F5FCD1",
+    "rgb": [
+      245,
+      252,
+      209
+    ]
+  },
+  {
+    "code": "A25",
+    "series": "A",
+    "name": "A25",
+    "name_zh": "A25",
+    "hex": "#F6D487",
+    "rgb": [
+      246,
+      212,
+      135
+    ]
+  },
+  {
+    "code": "A26",
+    "series": "A",
+    "name": "A26",
+    "name_zh": "A26",
+    "hex": "#FFCB4B",
+    "rgb": [
+      255,
+      203,
+      75
+    ]
+  },
+  {
+    "code": "B1",
+    "series": "B",
+    "name": "B1",
+    "name_zh": "B1",
+    "hex": "#D2E318",
+    "rgb": [
+      210,
+      227,
+      24
+    ]
+  },
+  {
+    "code": "B2",
+    "series": "B",
+    "name": "B2",
+    "name_zh": "B2",
+    "hex": "#79CD41",
+    "rgb": [
+      121,
+      205,
+      65
+    ]
+  },
+  {
+    "code": "B3",
+    "series": "B",
+    "name": "B3",
+    "name_zh": "B3",
+    "hex": "#82D7A1",
+    "rgb": [
+      130,
+      215,
+      161
+    ]
+  },
+  {
+    "code": "B4",
+    "series": "B",
+    "name": "B4",
+    "name_zh": "B4",
+    "hex": "#65DF4F",
+    "rgb": [
+      101,
+      223,
+      79
+    ]
+  },
+  {
+    "code": "B5",
+    "series": "B",
+    "name": "B5",
+    "name_zh": "B5",
+    "hex": "#5FC873",
+    "rgb": [
+      95,
+      200,
+      115
+    ]
+  },
+  {
+    "code": "B6",
+    "series": "B",
+    "name": "B6",
+    "name_zh": "B6",
+    "hex": "#49D1AE",
+    "rgb": [
+      73,
+      209,
+      174
+    ]
+  },
+  {
+    "code": "B7",
+    "series": "B",
+    "name": "B7",
+    "name_zh": "B7",
+    "hex": "#009696",
+    "rgb": [
+      0,
+      150,
+      150
+    ]
+  },
+  {
+    "code": "B8",
+    "series": "B",
+    "name": "B8",
+    "name_zh": "B8",
+    "hex": "#08774F",
+    "rgb": [
+      8,
+      119,
+      79
+    ]
+  },
+  {
+    "code": "B9",
+    "series": "B",
+    "name": "B9",
+    "name_zh": "B9",
+    "hex": "#183823",
+    "rgb": [
+      24,
+      56,
+      35
+    ]
+  },
+  {
+    "code": "B10",
+    "series": "B",
+    "name": "B10",
+    "name_zh": "B10",
+    "hex": "#83CFC3",
+    "rgb": [
+      131,
+      207,
+      195
+    ]
+  },
+  {
+    "code": "B11",
+    "series": "B",
+    "name": "B11",
+    "name_zh": "B11",
+    "hex": "#5A6A27",
+    "rgb": [
+      90,
+      106,
+      39
+    ]
+  },
+  {
+    "code": "B12",
+    "series": "B",
+    "name": "B12",
+    "name_zh": "B12",
+    "hex": "#045F45",
+    "rgb": [
+      4,
+      95,
+      69
+    ]
+  },
+  {
+    "code": "B13",
+    "series": "B",
+    "name": "B13",
+    "name_zh": "B13",
+    "hex": "#E2FFB3",
+    "rgb": [
+      226,
+      255,
+      179
+    ]
+  },
+  {
+    "code": "B14",
+    "series": "B",
+    "name": "B14",
+    "name_zh": "B14",
+    "hex": "#9DD12E",
+    "rgb": [
+      157,
+      209,
+      46
+    ]
+  },
+  {
+    "code": "B15",
+    "series": "B",
+    "name": "B15",
+    "name_zh": "B15",
+    "hex": "#254B3C",
+    "rgb": [
+      37,
+      75,
+      60
+    ]
+  },
+  {
+    "code": "B16",
+    "series": "B",
+    "name": "B16",
+    "name_zh": "B16",
+    "hex": "#D0FCAD",
+    "rgb": [
+      208,
+      252,
+      173
+    ]
+  },
+  {
+    "code": "B17",
+    "series": "B",
+    "name": "B17",
+    "name_zh": "B17",
+    "hex": "#8CA12A",
+    "rgb": [
+      140,
+      161,
+      42
+    ]
+  },
+  {
+    "code": "B18",
+    "series": "B",
+    "name": "B18",
+    "name_zh": "B18",
+    "hex": "#D2D958",
+    "rgb": [
+      210,
+      217,
+      88
+    ]
+  },
+  {
+    "code": "B19",
+    "series": "B",
+    "name": "B19",
+    "name_zh": "B19",
+    "hex": "#49BCA9",
+    "rgb": [
+      73,
+      188,
+      169
+    ]
+  },
+  {
+    "code": "B20",
+    "series": "B",
+    "name": "B20",
+    "name_zh": "B20",
+    "hex": "#E8FDEC",
+    "rgb": [
+      232,
+      253,
+      236
+    ]
+  },
+  {
+    "code": "B21",
+    "series": "B",
+    "name": "B21",
+    "name_zh": "B21",
+    "hex": "#188B81",
+    "rgb": [
+      24,
+      139,
+      129
+    ]
+  },
+  {
+    "code": "B22",
+    "series": "B",
+    "name": "B22",
+    "name_zh": "B22",
+    "hex": "#0C5C5B",
+    "rgb": [
+      12,
+      92,
+      91
+    ]
+  },
+  {
+    "code": "B23",
+    "series": "B",
+    "name": "B23",
+    "name_zh": "B23",
+    "hex": "#3D461B",
+    "rgb": [
+      61,
+      70,
+      27
+    ]
+  },
+  {
+    "code": "B24",
+    "series": "B",
+    "name": "B24",
+    "name_zh": "B24",
+    "hex": "#EAFCB6",
+    "rgb": [
+      234,
+      252,
+      182
+    ]
+  },
+  {
+    "code": "B25",
+    "series": "B",
+    "name": "B25",
+    "name_zh": "B25",
+    "hex": "#538771",
+    "rgb": [
+      83,
+      135,
+      113
+    ]
+  },
+  {
+    "code": "B26",
+    "series": "B",
+    "name": "B26",
+    "name_zh": "B26",
+    "hex": "#8A7A40",
+    "rgb": [
+      138,
+      122,
+      64
+    ]
+  },
+  {
+    "code": "B27",
+    "series": "B",
+    "name": "B27",
+    "name_zh": "B27",
+    "hex": "#D2DEB6",
+    "rgb": [
+      210,
+      222,
+      182
+    ]
+  },
+  {
+    "code": "B28",
+    "series": "B",
+    "name": "B28",
+    "name_zh": "B28",
+    "hex": "#9FF4C2",
+    "rgb": [
+      159,
+      244,
+      194
+    ]
+  },
+  {
+    "code": "B29",
+    "series": "B",
+    "name": "B29",
+    "name_zh": "B29",
+    "hex": "#BBD747",
+    "rgb": [
+      187,
+      215,
+      71
+    ]
+  },
+  {
+    "code": "B30",
+    "series": "B",
+    "name": "B30",
+    "name_zh": "B30",
+    "hex": "#F5FFE6",
+    "rgb": [
+      245,
+      255,
+      230
+    ]
+  },
+  {
+    "code": "B31",
+    "series": "B",
+    "name": "B31",
+    "name_zh": "B31",
+    "hex": "#BFE1C2",
+    "rgb": [
+      191,
+      225,
+      194
+    ]
+  },
+  {
+    "code": "B32",
+    "series": "B",
+    "name": "B32",
+    "name_zh": "B32",
+    "hex": "#9FBA5C",
+    "rgb": [
+      159,
+      186,
+      92
+    ]
+  },
+  {
+    "code": "C1",
+    "series": "C",
+    "name": "C1",
+    "name_zh": "C1",
+    "hex": "#D5E3DE",
+    "rgb": [
+      213,
+      227,
+      222
+    ]
+  },
+  {
+    "code": "C2",
+    "series": "C",
+    "name": "C2",
+    "name_zh": "C2",
+    "hex": "#BBF1F4",
+    "rgb": [
+      187,
+      241,
+      244
+    ]
+  },
+  {
+    "code": "C3",
+    "series": "C",
+    "name": "C3",
+    "name_zh": "C3",
+    "hex": "#73C0DF",
+    "rgb": [
+      115,
+      192,
+      223
+    ]
+  },
+  {
+    "code": "C4",
+    "series": "C",
+    "name": "C4",
+    "name_zh": "C4",
+    "hex": "#33B3E1",
+    "rgb": [
+      51,
+      179,
+      225
+    ]
+  },
+  {
+    "code": "C5",
+    "series": "C",
+    "name": "C5",
+    "name_zh": "C5",
+    "hex": "#00A3CA",
+    "rgb": [
+      0,
+      163,
+      202
+    ]
+  },
+  {
+    "code": "C6",
+    "series": "C",
+    "name": "C6",
+    "name_zh": "C6",
+    "hex": "#58A0D9",
+    "rgb": [
+      88,
+      160,
+      217
+    ]
+  },
+  {
+    "code": "C7",
+    "series": "C",
+    "name": "C7",
+    "name_zh": "C7",
+    "hex": "#0588CC",
+    "rgb": [
+      5,
+      136,
+      204
+    ]
+  },
+  {
+    "code": "C8",
+    "series": "C",
+    "name": "C8",
+    "name_zh": "C8",
+    "hex": "#005F9E",
+    "rgb": [
+      0,
+      95,
+      158
+    ]
+  },
+  {
+    "code": "C9",
+    "series": "C",
+    "name": "C9",
+    "name_zh": "C9",
+    "hex": "#086FB9",
+    "rgb": [
+      8,
+      111,
+      185
+    ]
+  },
+  {
+    "code": "C10",
+    "series": "C",
+    "name": "C10",
+    "name_zh": "C10",
+    "hex": "#52B4E0",
+    "rgb": [
+      82,
+      180,
+      224
+    ]
+  },
+  {
+    "code": "C11",
+    "series": "C",
+    "name": "C11",
+    "name_zh": "C11",
+    "hex": "#00A9B9",
+    "rgb": [
+      0,
+      169,
+      185
+    ]
+  },
+  {
+    "code": "C12",
+    "series": "C",
+    "name": "C12",
+    "name_zh": "C12",
+    "hex": "#1C375A",
+    "rgb": [
+      28,
+      55,
+      90
+    ]
+  },
+  {
+    "code": "C13",
+    "series": "C",
+    "name": "C13",
+    "name_zh": "C13",
+    "hex": "#CEE0F0",
+    "rgb": [
+      206,
+      224,
+      240
+    ]
+  },
+  {
+    "code": "C14",
+    "series": "C",
+    "name": "C14",
+    "name_zh": "C14",
+    "hex": "#EBF5F4",
+    "rgb": [
+      235,
+      245,
+      244
+    ]
+  },
+  {
+    "code": "C15",
+    "series": "C",
+    "name": "C15",
+    "name_zh": "C15",
+    "hex": "#00AAAD",
+    "rgb": [
+      0,
+      170,
+      173
+    ]
+  },
+  {
+    "code": "C16",
+    "series": "C",
+    "name": "C16",
+    "name_zh": "C16",
+    "hex": "#004C7D",
+    "rgb": [
+      0,
+      76,
+      125
+    ]
+  },
+  {
+    "code": "C17",
+    "series": "C",
+    "name": "C17",
+    "name_zh": "C17",
+    "hex": "#5BD4F6",
+    "rgb": [
+      91,
+      212,
+      246
+    ]
+  },
+  {
+    "code": "C18",
+    "series": "C",
+    "name": "C18",
+    "name_zh": "C18",
+    "hex": "#36515C",
+    "rgb": [
+      54,
+      81,
+      92
+    ]
+  },
+  {
+    "code": "C19",
+    "series": "C",
+    "name": "C19",
+    "name_zh": "C19",
+    "hex": "#0F909D",
+    "rgb": [
+      15,
+      144,
+      157
+    ]
+  },
+  {
+    "code": "C20",
+    "series": "C",
+    "name": "C20",
+    "name_zh": "C20",
+    "hex": "#0084B7",
+    "rgb": [
+      0,
+      132,
+      183
+    ]
+  },
+  {
+    "code": "C21",
+    "series": "C",
+    "name": "C21",
+    "name_zh": "C21",
+    "hex": "#DDECFA",
+    "rgb": [
+      221,
+      236,
+      250
+    ]
+  },
+  {
+    "code": "C22",
+    "series": "C",
+    "name": "C22",
+    "name_zh": "C22",
+    "hex": "#84BAC2",
+    "rgb": [
+      132,
+      186,
+      194
+    ]
+  },
+  {
+    "code": "C23",
+    "series": "C",
+    "name": "C23",
+    "name_zh": "C23",
+    "hex": "#CBDBDB",
+    "rgb": [
+      203,
+      219,
+      219
+    ]
+  },
+  {
+    "code": "C24",
+    "series": "C",
+    "name": "C24",
+    "name_zh": "C24",
+    "hex": "#88BDE2",
+    "rgb": [
+      136,
+      189,
+      226
+    ]
+  },
+  {
+    "code": "C25",
+    "series": "C",
+    "name": "C25",
+    "name_zh": "C25",
+    "hex": "#B3ECE0",
+    "rgb": [
+      179,
+      236,
+      224
+    ]
+  },
+  {
+    "code": "C26",
+    "series": "C",
+    "name": "C26",
+    "name_zh": "C26",
+    "hex": "#3E9EBF",
+    "rgb": [
+      62,
+      158,
+      191
+    ]
+  },
+  {
+    "code": "C27",
+    "series": "C",
+    "name": "C27",
+    "name_zh": "C27",
+    "hex": "#E9F0F3",
+    "rgb": [
+      233,
+      240,
+      243
+    ]
+  },
+  {
+    "code": "C28",
+    "series": "C",
+    "name": "C28",
+    "name_zh": "C28",
+    "hex": "#C2CDE3",
+    "rgb": [
+      194,
+      205,
+      227
+    ]
+  },
+  {
+    "code": "C29",
+    "series": "C",
+    "name": "C29",
+    "name_zh": "C29",
+    "hex": "#586B8F",
+    "rgb": [
+      88,
+      107,
+      143
+    ]
+  },
+  {
+    "code": "D1",
+    "series": "D",
+    "name": "D1",
+    "name_zh": "D1",
+    "hex": "#7292E2",
+    "rgb": [
+      114,
+      146,
+      226
+    ]
+  },
+  {
+    "code": "D2",
+    "series": "D",
+    "name": "D2",
+    "name_zh": "D2",
+    "hex": "#6E8CCC",
+    "rgb": [
+      110,
+      140,
+      204
+    ]
+  },
+  {
+    "code": "D3",
+    "series": "D",
+    "name": "D3",
+    "name_zh": "D3",
+    "hex": "#13419A",
+    "rgb": [
+      19,
+      65,
+      154
+    ]
+  },
+  {
+    "code": "D4",
+    "series": "D",
+    "name": "D4",
+    "name_zh": "D4",
+    "hex": "#1E3175",
+    "rgb": [
+      30,
+      49,
+      117
+    ]
+  },
+  {
+    "code": "D5",
+    "series": "D",
+    "name": "D5",
+    "name_zh": "D5",
+    "hex": "#B850B2",
+    "rgb": [
+      184,
+      80,
+      178
+    ]
+  },
+  {
+    "code": "D6",
+    "series": "D",
+    "name": "D6",
+    "name_zh": "D6",
+    "hex": "#AD92E9",
+    "rgb": [
+      173,
+      146,
+      233
+    ]
+  },
+  {
+    "code": "D7",
+    "series": "D",
+    "name": "D7",
+    "name_zh": "D7",
+    "hex": "#5F2D91",
+    "rgb": [
+      95,
+      45,
+      145
+    ]
+  },
+  {
+    "code": "D8",
+    "series": "D",
+    "name": "D8",
+    "name_zh": "D8",
+    "hex": "#D7CDF1",
+    "rgb": [
+      215,
+      205,
+      241
+    ]
+  },
+  {
+    "code": "D9",
+    "series": "D",
+    "name": "D9",
+    "name_zh": "D9",
+    "hex": "#BDB2E6",
+    "rgb": [
+      189,
+      178,
+      230
+    ]
+  },
+  {
+    "code": "D10",
+    "series": "D",
+    "name": "D10",
+    "name_zh": "D10",
+    "hex": "#251B58",
+    "rgb": [
+      37,
+      27,
+      88
+    ]
+  },
+  {
+    "code": "D11",
+    "series": "D",
+    "name": "D11",
+    "name_zh": "D11",
+    "hex": "#A2BBE7",
+    "rgb": [
+      162,
+      187,
+      231
+    ]
+  },
+  {
+    "code": "D12",
+    "series": "D",
+    "name": "D12",
+    "name_zh": "D12",
+    "hex": "#CF8BBE",
+    "rgb": [
+      207,
+      139,
+      190
+    ]
+  },
+  {
+    "code": "D13",
+    "series": "D",
+    "name": "D13",
+    "name_zh": "D13",
+    "hex": "#B80096",
+    "rgb": [
+      184,
+      0,
+      150
+    ]
+  },
+  {
+    "code": "D14",
+    "series": "D",
+    "name": "D14",
+    "name_zh": "D14",
+    "hex": "#A137A7",
+    "rgb": [
+      161,
+      55,
+      167
+    ]
+  },
+  {
+    "code": "D15",
+    "series": "D",
+    "name": "D15",
+    "name_zh": "D15",
+    "hex": "#4A388A",
+    "rgb": [
+      74,
+      56,
+      138
+    ]
+  },
+  {
+    "code": "D16",
+    "series": "D",
+    "name": "D16",
+    "name_zh": "D16",
+    "hex": "#DCE8F6",
+    "rgb": [
+      220,
+      232,
+      246
+    ]
+  },
+  {
+    "code": "D17",
+    "series": "D",
+    "name": "D17",
+    "name_zh": "D17",
+    "hex": "#AECEF0",
+    "rgb": [
+      174,
+      206,
+      240
+    ]
+  },
+  {
+    "code": "D18",
+    "series": "D",
+    "name": "D18",
+    "name_zh": "D18",
+    "hex": "#B38EDB",
+    "rgb": [
+      179,
+      142,
+      219
+    ]
+  },
+  {
+    "code": "D19",
+    "series": "D",
+    "name": "D19",
+    "name_zh": "D19",
+    "hex": "#E8D2EA",
+    "rgb": [
+      232,
+      210,
+      234
+    ]
+  },
+  {
+    "code": "D20",
+    "series": "D",
+    "name": "D20",
+    "name_zh": "D20",
+    "hex": "#B460C3",
+    "rgb": [
+      180,
+      96,
+      195
+    ]
+  },
+  {
+    "code": "D21",
+    "series": "D",
+    "name": "D21",
+    "name_zh": "D21",
+    "hex": "#842A94",
+    "rgb": [
+      132,
+      42,
+      148
+    ]
+  },
+  {
+    "code": "D22",
+    "series": "D",
+    "name": "D22",
+    "name_zh": "D22",
+    "hex": "#4B5E9E",
+    "rgb": [
+      75,
+      94,
+      158
+    ]
+  },
+  {
+    "code": "D23",
+    "series": "D",
+    "name": "D23",
+    "name_zh": "D23",
+    "hex": "#D6D2E2",
+    "rgb": [
+      214,
+      210,
+      226
+    ]
+  },
+  {
+    "code": "D24",
+    "series": "D",
+    "name": "D24",
+    "name_zh": "D24",
+    "hex": "#7776D1",
+    "rgb": [
+      119,
+      118,
+      209
+    ]
+  },
+  {
+    "code": "D25",
+    "series": "D",
+    "name": "D25",
+    "name_zh": "D25",
+    "hex": "#3837A8",
+    "rgb": [
+      56,
+      55,
+      168
+    ]
+  },
+  {
+    "code": "D26",
+    "series": "D",
+    "name": "D26",
+    "name_zh": "D26",
+    "hex": "#DDC8DD",
+    "rgb": [
+      221,
+      200,
+      221
+    ]
+  },
+  {
+    "code": "E1",
+    "series": "E",
+    "name": "E1",
+    "name_zh": "E1",
+    "hex": "#FDD6C9",
+    "rgb": [
+      253,
+      214,
+      201
+    ]
+  },
+  {
+    "code": "E2",
+    "series": "E",
+    "name": "E2",
+    "name_zh": "E2",
+    "hex": "#FFD8F4",
+    "rgb": [
+      255,
+      216,
+      244
+    ]
+  },
+  {
+    "code": "E3",
+    "series": "E",
+    "name": "E3",
+    "name_zh": "E3",
+    "hex": "#FFA0C3",
+    "rgb": [
+      255,
+      160,
+      195
+    ]
+  },
+  {
+    "code": "E4",
+    "series": "E",
+    "name": "E4",
+    "name_zh": "E4",
+    "hex": "#F67AAB",
+    "rgb": [
+      246,
+      122,
+      171
+    ]
+  },
+  {
+    "code": "E5",
+    "series": "E",
+    "name": "E5",
+    "name_zh": "E5",
+    "hex": "#DA5B95",
+    "rgb": [
+      218,
+      91,
+      149
+    ]
+  },
+  {
+    "code": "E6",
+    "series": "E",
+    "name": "E6",
+    "name_zh": "E6",
+    "hex": "#FF4B78",
+    "rgb": [
+      255,
+      75,
+      120
+    ]
+  },
+  {
+    "code": "E7",
+    "series": "E",
+    "name": "E7",
+    "name_zh": "E7",
+    "hex": "#9E156B",
+    "rgb": [
+      158,
+      21,
+      107
+    ]
+  },
+  {
+    "code": "E8",
+    "series": "E",
+    "name": "E8",
+    "name_zh": "E8",
+    "hex": "#FFE1E6",
+    "rgb": [
+      255,
+      225,
+      230
+    ]
+  },
+  {
+    "code": "E9",
+    "series": "E",
+    "name": "E9",
+    "name_zh": "E9",
+    "hex": "#F378CA",
+    "rgb": [
+      243,
+      120,
+      202
+    ]
+  },
+  {
+    "code": "E10",
+    "series": "E",
+    "name": "E10",
+    "name_zh": "E10",
+    "hex": "#BE316D",
+    "rgb": [
+      190,
+      49,
+      109
+    ]
+  },
+  {
+    "code": "E11",
+    "series": "E",
+    "name": "E11",
+    "name_zh": "E11",
+    "hex": "#FFE8DA",
+    "rgb": [
+      255,
+      232,
+      218
+    ]
+  },
+  {
+    "code": "E12",
+    "series": "E",
+    "name": "E12",
+    "name_zh": "E12",
+    "hex": "#FFA5C6",
+    "rgb": [
+      255,
+      165,
+      198
+    ]
+  },
+  {
+    "code": "E13",
+    "series": "E",
+    "name": "E13",
+    "name_zh": "E13",
+    "hex": "#B53883",
+    "rgb": [
+      181,
+      56,
+      131
+    ]
+  },
+  {
+    "code": "E14",
+    "series": "E",
+    "name": "E14",
+    "name_zh": "E14",
+    "hex": "#FFDDC7",
+    "rgb": [
+      255,
+      221,
+      199
+    ]
+  },
+  {
+    "code": "E15",
+    "series": "E",
+    "name": "E15",
+    "name_zh": "E15",
+    "hex": "#E5C6D0",
+    "rgb": [
+      229,
+      198,
+      208
+    ]
+  },
+  {
+    "code": "E16",
+    "series": "E",
+    "name": "E16",
+    "name_zh": "E16",
+    "hex": "#F9F2EB",
+    "rgb": [
+      249,
+      242,
+      235
+    ]
+  },
+  {
+    "code": "E17",
+    "series": "E",
+    "name": "E17",
+    "name_zh": "E17",
+    "hex": "#E7DCE6",
+    "rgb": [
+      231,
+      220,
+      230
+    ]
+  },
+  {
+    "code": "E18",
+    "series": "E",
+    "name": "E18",
+    "name_zh": "E18",
+    "hex": "#FFD3E6",
+    "rgb": [
+      255,
+      211,
+      230
+    ]
+  },
+  {
+    "code": "E19",
+    "series": "E",
+    "name": "E19",
+    "name_zh": "E19",
+    "hex": "#FFD5EC",
+    "rgb": [
+      255,
+      213,
+      236
+    ]
+  },
+  {
+    "code": "E20",
+    "series": "E",
+    "name": "E20",
+    "name_zh": "E20",
+    "hex": "#F3DCE8",
+    "rgb": [
+      243,
+      220,
+      232
+    ]
+  },
+  {
+    "code": "E21",
+    "series": "E",
+    "name": "E21",
+    "name_zh": "E21",
+    "hex": "#BD9CA3",
+    "rgb": [
+      189,
+      156,
+      163
+    ]
+  },
+  {
+    "code": "E22",
+    "series": "E",
+    "name": "E22",
+    "name_zh": "E22",
+    "hex": "#C578A5",
+    "rgb": [
+      197,
+      120,
+      165
+    ]
+  },
+  {
+    "code": "E23",
+    "series": "E",
+    "name": "E23",
+    "name_zh": "E23",
+    "hex": "#A37A9B",
+    "rgb": [
+      163,
+      122,
+      155
+    ]
+  },
+  {
+    "code": "E24",
+    "series": "E",
+    "name": "E24",
+    "name_zh": "E24",
+    "hex": "#F4E8FF",
+    "rgb": [
+      244,
+      232,
+      255
+    ]
+  },
+  {
+    "code": "F1",
+    "series": "F",
+    "name": "F1",
+    "name_zh": "F1",
+    "hex": "#FF7F67",
+    "rgb": [
+      255,
+      127,
+      103
+    ]
+  },
+  {
+    "code": "F2",
+    "series": "F",
+    "name": "F2",
+    "name_zh": "F2",
+    "hex": "#FF5D46",
+    "rgb": [
+      255,
+      93,
+      70
+    ]
+  },
+  {
+    "code": "F3",
+    "series": "F",
+    "name": "F3",
+    "name_zh": "F3",
+    "hex": "#E3564A",
+    "rgb": [
+      227,
+      86,
+      74
+    ]
+  },
+  {
+    "code": "F4",
+    "series": "F",
+    "name": "F4",
+    "name_zh": "F4",
+    "hex": "#C7270D",
+    "rgb": [
+      199,
+      39,
+      13
+    ]
+  },
+  {
+    "code": "F5",
+    "series": "F",
+    "name": "F5",
+    "name_zh": "F5",
+    "hex": "#BE0A27",
+    "rgb": [
+      190,
+      10,
+      39
+    ]
+  },
+  {
+    "code": "F6",
+    "series": "F",
+    "name": "F6",
+    "name_zh": "F6",
+    "hex": "#83411E",
+    "rgb": [
+      131,
+      65,
+      30
+    ]
+  },
+  {
+    "code": "F7",
+    "series": "F",
+    "name": "F7",
+    "name_zh": "F7",
+    "hex": "#730037",
+    "rgb": [
+      115,
+      0,
+      55
+    ]
+  },
+  {
+    "code": "F8",
+    "series": "F",
+    "name": "F8",
+    "name_zh": "F8",
+    "hex": "#AB0022",
+    "rgb": [
+      171,
+      0,
+      34
+    ]
+  },
+  {
+    "code": "F9",
+    "series": "F",
+    "name": "F9",
+    "name_zh": "F9",
+    "hex": "#DE7995",
+    "rgb": [
+      222,
+      121,
+      149
+    ]
+  },
+  {
+    "code": "F10",
+    "series": "F",
+    "name": "F10",
+    "name_zh": "F10",
+    "hex": "#AB613C",
+    "rgb": [
+      171,
+      97,
+      60
+    ]
+  },
+  {
+    "code": "F11",
+    "series": "F",
+    "name": "F11",
+    "name_zh": "F11",
+    "hex": "#5C2929",
+    "rgb": [
+      92,
+      41,
+      41
+    ]
+  },
+  {
+    "code": "F12",
+    "series": "F",
+    "name": "F12",
+    "name_zh": "F12",
+    "hex": "#F34461",
+    "rgb": [
+      243,
+      68,
+      97
+    ]
+  },
+  {
+    "code": "F13",
+    "series": "F",
+    "name": "F13",
+    "name_zh": "F13",
+    "hex": "#C64239",
+    "rgb": [
+      198,
+      66,
+      57
+    ]
+  },
+  {
+    "code": "F14",
+    "series": "F",
+    "name": "F14",
+    "name_zh": "F14",
+    "hex": "#FFA5BB",
+    "rgb": [
+      255,
+      165,
+      187
+    ]
+  },
+  {
+    "code": "F15",
+    "series": "F",
+    "name": "F15",
+    "name_zh": "F15",
+    "hex": "#BC0018",
+    "rgb": [
+      188,
+      0,
+      24
+    ]
+  },
+  {
+    "code": "F16",
+    "series": "F",
+    "name": "F16",
+    "name_zh": "F16",
+    "hex": "#FFD7CB",
+    "rgb": [
+      255,
+      215,
+      203
+    ]
+  },
+  {
+    "code": "F17",
+    "series": "F",
+    "name": "F17",
+    "name_zh": "F17",
+    "hex": "#F19D8A",
+    "rgb": [
+      241,
+      157,
+      138
+    ]
+  },
+  {
+    "code": "F18",
+    "series": "F",
+    "name": "F18",
+    "name_zh": "F18",
+    "hex": "#DC7B45",
+    "rgb": [
+      220,
+      123,
+      69
+    ]
+  },
+  {
+    "code": "F19",
+    "series": "F",
+    "name": "F19",
+    "name_zh": "F19",
+    "hex": "#C74651",
+    "rgb": [
+      199,
+      70,
+      81
+    ]
+  },
+  {
+    "code": "F20",
+    "series": "F",
+    "name": "F20",
+    "name_zh": "F20",
+    "hex": "#D8A89E",
+    "rgb": [
+      216,
+      168,
+      158
+    ]
+  },
+  {
+    "code": "F21",
+    "series": "F",
+    "name": "F21",
+    "name_zh": "F21",
+    "hex": "#EB9DB9",
+    "rgb": [
+      235,
+      157,
+      185
+    ]
+  },
+  {
+    "code": "F22",
+    "series": "F",
+    "name": "F22",
+    "name_zh": "F22",
+    "hex": "#FFD4D4",
+    "rgb": [
+      255,
+      212,
+      212
+    ]
+  },
+  {
+    "code": "F23",
+    "series": "F",
+    "name": "F23",
+    "name_zh": "F23",
+    "hex": "#EA8474",
+    "rgb": [
+      234,
+      132,
+      116
+    ]
+  },
+  {
+    "code": "F24",
+    "series": "F",
+    "name": "F24",
+    "name_zh": "F24",
+    "hex": "#F7C1C5",
+    "rgb": [
+      247,
+      193,
+      197
+    ]
+  },
+  {
+    "code": "F25",
+    "series": "F",
+    "name": "F25",
+    "name_zh": "F25",
+    "hex": "#FC5768",
+    "rgb": [
+      252,
+      87,
+      104
+    ]
+  },
+  {
+    "code": "G1",
+    "series": "G",
+    "name": "G1",
+    "name_zh": "G1",
+    "hex": "#FFE7C8",
+    "rgb": [
+      255,
+      231,
+      200
+    ]
+  },
+  {
+    "code": "G2",
+    "series": "G",
+    "name": "G2",
+    "name_zh": "G2",
+    "hex": "#FFD6C3",
+    "rgb": [
+      255,
+      214,
+      195
+    ]
+  },
+  {
+    "code": "G3",
+    "series": "G",
+    "name": "G3",
+    "name_zh": "G3",
+    "hex": "#EEB694",
+    "rgb": [
+      238,
+      182,
+      148
+    ]
+  },
+  {
+    "code": "G4",
+    "series": "G",
+    "name": "G4",
+    "name_zh": "G4",
+    "hex": "#D9A58C",
+    "rgb": [
+      217,
+      165,
+      140
+    ]
+  },
+  {
+    "code": "G5",
+    "series": "G",
+    "name": "G5",
+    "name_zh": "G5",
+    "hex": "#F49630",
+    "rgb": [
+      244,
+      150,
+      48
+    ]
+  },
+  {
+    "code": "G6",
+    "series": "G",
+    "name": "G6",
+    "name_zh": "G6",
+    "hex": "#F19937",
+    "rgb": [
+      241,
+      153,
+      55
+    ]
+  },
+  {
+    "code": "G7",
+    "series": "G",
+    "name": "G7",
+    "name_zh": "G7",
+    "hex": "#AC745B",
+    "rgb": [
+      172,
+      116,
+      91
+    ]
+  },
+  {
+    "code": "G8",
+    "series": "G",
+    "name": "G8",
+    "name_zh": "G8",
+    "hex": "#694A42",
+    "rgb": [
+      105,
+      74,
+      66
+    ]
+  },
+  {
+    "code": "G9",
+    "series": "G",
+    "name": "G9",
+    "name_zh": "G9",
+    "hex": "#F7CC9D",
+    "rgb": [
+      247,
+      204,
+      157
+    ]
+  },
+  {
+    "code": "G10",
+    "series": "G",
+    "name": "G10",
+    "name_zh": "G10",
+    "hex": "#C7832F",
+    "rgb": [
+      199,
+      131,
+      47
+    ]
+  },
+  {
+    "code": "G11",
+    "series": "G",
+    "name": "G11",
+    "name_zh": "G11",
+    "hex": "#D3C391",
+    "rgb": [
+      211,
+      195,
+      145
+    ]
+  },
+  {
+    "code": "G12",
+    "series": "G",
+    "name": "G12",
+    "name_zh": "G12",
+    "hex": "#E6B986",
+    "rgb": [
+      230,
+      185,
+      134
+    ]
+  },
+  {
+    "code": "G13",
+    "series": "G",
+    "name": "G13",
+    "name_zh": "G13",
+    "hex": "#C67B4F",
+    "rgb": [
+      198,
+      123,
+      79
+    ]
+  },
+  {
+    "code": "G14",
+    "series": "G",
+    "name": "G14",
+    "name_zh": "G14",
+    "hex": "#8D6242",
+    "rgb": [
+      141,
+      98,
+      66
+    ]
+  },
+  {
+    "code": "G15",
+    "series": "G",
+    "name": "G15",
+    "name_zh": "G15",
+    "hex": "#F6F7E2",
+    "rgb": [
+      246,
+      247,
+      226
+    ]
+  },
+  {
+    "code": "G16",
+    "series": "G",
+    "name": "G16",
+    "name_zh": "G16",
+    "hex": "#F2E7D7",
+    "rgb": [
+      242,
+      231,
+      215
+    ]
+  },
+  {
+    "code": "G17",
+    "series": "G",
+    "name": "G17",
+    "name_zh": "G17",
+    "hex": "#786562",
+    "rgb": [
+      120,
+      101,
+      98
+    ]
+  },
+  {
+    "code": "G18",
+    "series": "G",
+    "name": "G18",
+    "name_zh": "G18",
+    "hex": "#FEF5EB",
+    "rgb": [
+      254,
+      245,
+      235
+    ]
+  },
+  {
+    "code": "G19",
+    "series": "G",
+    "name": "G19",
+    "name_zh": "G19",
+    "hex": "#F0AB47",
+    "rgb": [
+      240,
+      171,
+      71
+    ]
+  },
+  {
+    "code": "G20",
+    "series": "G",
+    "name": "G20",
+    "name_zh": "G20",
+    "hex": "#AE6949",
+    "rgb": [
+      174,
+      105,
+      73
+    ]
+  },
+  {
+    "code": "G21",
+    "series": "G",
+    "name": "G21",
+    "name_zh": "G21",
+    "hex": "#BF8C6E",
+    "rgb": [
+      191,
+      140,
+      110
+    ]
+  },
+  {
+    "code": "H1",
+    "series": "H",
+    "name": "H1",
+    "name_zh": "H1",
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ]
+  },
+  {
+    "code": "H2",
+    "series": "H",
+    "name": "H2",
+    "name_zh": "H2",
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ]
+  },
+  {
+    "code": "H3",
+    "series": "H",
+    "name": "H3",
+    "name_zh": "H3",
+    "hex": "#9B9B9B",
+    "rgb": [
+      155,
+      155,
+      155
+    ]
+  },
+  {
+    "code": "H4",
+    "series": "H",
+    "name": "H4",
+    "name_zh": "H4",
+    "hex": "#6D6D6D",
+    "rgb": [
+      109,
+      109,
+      109
+    ]
+  },
+  {
+    "code": "H5",
+    "series": "H",
+    "name": "H5",
+    "name_zh": "H5",
+    "hex": "#4D4D4D",
+    "rgb": [
+      77,
+      77,
+      77
+    ]
+  },
+  {
+    "code": "H6",
+    "series": "H",
+    "name": "H6",
+    "name_zh": "H6",
+    "hex": "#3A3A3A",
+    "rgb": [
+      58,
+      58,
+      58
+    ]
+  },
+  {
+    "code": "H7",
+    "series": "H",
+    "name": "H7",
+    "name_zh": "H7",
+    "hex": "#000000",
+    "rgb": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "code": "H8",
+    "series": "H",
+    "name": "H8",
+    "name_zh": "H8",
+    "hex": "#FFF0F1",
+    "rgb": [
+      255,
+      240,
+      241
+    ]
+  },
+  {
+    "code": "H9",
+    "series": "H",
+    "name": "H9",
+    "name_zh": "H9",
+    "hex": "#E3E6DF",
+    "rgb": [
+      227,
+      230,
+      223
+    ]
+  },
+  {
+    "code": "H10",
+    "series": "H",
+    "name": "H10",
+    "name_zh": "H10",
+    "hex": "#E2E0E7",
+    "rgb": [
+      226,
+      224,
+      231
+    ]
+  },
+  {
+    "code": "H11",
+    "series": "H",
+    "name": "H11",
+    "name_zh": "H11",
+    "hex": "#BCB8B5",
+    "rgb": [
+      188,
+      184,
+      181
+    ]
+  },
+  {
+    "code": "H12",
+    "series": "H",
+    "name": "H12",
+    "name_zh": "H12",
+    "hex": "#F7F3E1",
+    "rgb": [
+      247,
+      243,
+      225
+    ]
+  },
+  {
+    "code": "H13",
+    "series": "H",
+    "name": "H13",
+    "name_zh": "H13",
+    "hex": "#EADDC8",
+    "rgb": [
+      234,
+      221,
+      200
+    ]
+  },
+  {
+    "code": "H14",
+    "series": "H",
+    "name": "H14",
+    "name_zh": "H14",
+    "hex": "#B8C8C5",
+    "rgb": [
+      184,
+      200,
+      197
+    ]
+  },
+  {
+    "code": "H15",
+    "series": "H",
+    "name": "H15",
+    "name_zh": "H15",
+    "hex": "#99ABAC",
+    "rgb": [
+      153,
+      171,
+      172
+    ]
+  },
+  {
+    "code": "H16",
+    "series": "H",
+    "name": "H16",
+    "name_zh": "H16",
+    "hex": "#444236",
+    "rgb": [
+      68,
+      66,
+      54
+    ]
+  },
+  {
+    "code": "H17",
+    "series": "H",
+    "name": "H17",
+    "name_zh": "H17",
+    "hex": "#FAFBF5",
+    "rgb": [
+      250,
+      251,
+      245
+    ]
+  },
+  {
+    "code": "H18",
+    "series": "H",
+    "name": "H18",
+    "name_zh": "H18",
+    "hex": "#FEFEEE",
+    "rgb": [
+      254,
+      254,
+      238
+    ]
+  },
+  {
+    "code": "H19",
+    "series": "H",
+    "name": "H19",
+    "name_zh": "H19",
+    "hex": "#FBF2E4",
+    "rgb": [
+      251,
+      242,
+      228
+    ]
+  },
+  {
+    "code": "H20",
+    "series": "H",
+    "name": "H20",
+    "name_zh": "H20",
+    "hex": "#9EAEAD",
+    "rgb": [
+      158,
+      174,
+      173
+    ]
+  },
+  {
+    "code": "H21",
+    "series": "H",
+    "name": "H21",
+    "name_zh": "H21",
+    "hex": "#FDFFF2",
+    "rgb": [
+      253,
+      255,
+      242
+    ]
+  },
+  {
+    "code": "H22",
+    "series": "H",
+    "name": "H22",
+    "name_zh": "H22",
+    "hex": "#EDEDE7",
+    "rgb": [
+      237,
+      237,
+      231
+    ]
+  },
+  {
+    "code": "H23",
+    "series": "H",
+    "name": "H23",
+    "name_zh": "H23",
+    "hex": "#B4B8A7",
+    "rgb": [
+      180,
+      184,
+      167
+    ]
+  },
+  {
+    "code": "M1",
+    "series": "M",
+    "name": "M1",
+    "name_zh": "M1",
+    "hex": "#AEBBA8",
+    "rgb": [
+      174,
+      187,
+      168
+    ]
+  },
+  {
+    "code": "M2",
+    "series": "M",
+    "name": "M2",
+    "name_zh": "M2",
+    "hex": "#729376",
+    "rgb": [
+      114,
+      147,
+      118
+    ]
+  },
+  {
+    "code": "M3",
+    "series": "M",
+    "name": "M3",
+    "name_zh": "M3",
+    "hex": "#6A8890",
+    "rgb": [
+      106,
+      136,
+      144
+    ]
+  },
+  {
+    "code": "M4",
+    "series": "M",
+    "name": "M4",
+    "name_zh": "M4",
+    "hex": "#BEB39D",
+    "rgb": [
+      190,
+      179,
+      157
+    ]
+  },
+  {
+    "code": "M5",
+    "series": "M",
+    "name": "M5",
+    "name_zh": "M5",
+    "hex": "#B8B78C",
+    "rgb": [
+      184,
+      183,
+      140
+    ]
+  },
+  {
+    "code": "M6",
+    "series": "M",
+    "name": "M6",
+    "name_zh": "M6",
+    "hex": "#B2AC93",
+    "rgb": [
+      178,
+      172,
+      147
+    ]
+  },
+  {
+    "code": "M7",
+    "series": "M",
+    "name": "M7",
+    "name_zh": "M7",
+    "hex": "#BC9F94",
+    "rgb": [
+      188,
+      159,
+      148
+    ]
+  },
+  {
+    "code": "M8",
+    "series": "M",
+    "name": "M8",
+    "name_zh": "M8",
+    "hex": "#968381",
+    "rgb": [
+      150,
+      131,
+      129
+    ]
+  },
+  {
+    "code": "M9",
+    "series": "M",
+    "name": "M9",
+    "name_zh": "M9",
+    "hex": "#B39D88",
+    "rgb": [
+      179,
+      157,
+      136
+    ]
+  },
+  {
+    "code": "M10",
+    "series": "M",
+    "name": "M10",
+    "name_zh": "M10",
+    "hex": "#B796A3",
+    "rgb": [
+      183,
+      150,
+      163
+    ]
+  },
+  {
+    "code": "M11",
+    "series": "M",
+    "name": "M11",
+    "name_zh": "M11",
+    "hex": "#B096B9",
+    "rgb": [
+      176,
+      150,
+      185
+    ]
+  },
+  {
+    "code": "M12",
+    "series": "M",
+    "name": "M12",
+    "name_zh": "M12",
+    "hex": "#685951",
+    "rgb": [
+      104,
+      89,
+      81
+    ]
+  },
+  {
+    "code": "M13",
+    "series": "M",
+    "name": "M13",
+    "name_zh": "M13",
+    "hex": "#C79582",
+    "rgb": [
+      199,
+      149,
+      130
+    ]
+  },
+  {
+    "code": "M14",
+    "series": "M",
+    "name": "M14",
+    "name_zh": "M14",
+    "hex": "#CA694F",
+    "rgb": [
+      202,
+      105,
+      79
+    ]
+  },
+  {
+    "code": "M15",
+    "series": "M",
+    "name": "M15",
+    "name_zh": "M15",
+    "hex": "#929FA9",
+    "rgb": [
+      146,
+      159,
+      169
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "miniprogramRoot": "dist/",
+  "projectname": "拼豆助手",
+  "description": "将用户选择的图片转换为拼豆图纸",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "compileHotReLoad": false,
+    "useCompilerPlugins": false
+  },
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "condition": {}
+}
