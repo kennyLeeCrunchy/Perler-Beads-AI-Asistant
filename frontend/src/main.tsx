@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+// Import order is intentional: global/shared styles first, workspace and
+// responsive overrides second.
 import './styles.css';
 import './advanced.css';
 
