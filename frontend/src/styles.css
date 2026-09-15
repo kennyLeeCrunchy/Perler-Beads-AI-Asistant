@@ -42,7 +42,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .brand-mark-wrap { width: 58px; height: 64px; flex: 0 0 58px; display: grid; place-items: center; position: relative; z-index: 2; }
 .brand-mark { width: 58px; height: 58px; display: block; object-fit: contain; transform-origin: center bottom; transition: transform .24s cubic-bezier(.2,.8,.2,1), filter .24s ease; }
 .brand:hover .brand-mark, .brand:focus-visible .brand-mark { transform: scale(1.22) rotate(-2deg); filter: drop-shadow(0 8px 10px rgba(91, 59, 42, .18)); }
-.brand-name { color: #413831; white-space: nowrap; font-family: "STKaiti", "KaiTi", "Kaiti SC", "Microsoft YaHei", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: .045em; }
+.brand-name { color: #413831; white-space: nowrap; font-family: "Noto Serif SC", "Noto Serif CJK SC", "Noto Serif", "Georgia", "Microsoft YaHei", sans-serif; font-size: 20px; font-weight: 500; letter-spacing: .045em; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: 56px; font-size: 15px; font-weight: 620; height: 100%; }
 .desktop-nav a { position: relative; height: 50px; display: grid; place-items: center; color: #58524d; }
 .desktop-nav a::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 0; height: 2px; border-radius: 2px; background: var(--primary); transform: translateX(-50%); transition: .2s; }
