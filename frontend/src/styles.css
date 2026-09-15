@@ -128,6 +128,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .accent-coral .capability-icon { color: var(--primary); background: var(--primary-soft); }.accent-blue .capability-icon { color: var(--blue); background: #e8f1f4; }.accent-green .capability-icon { color: var(--green); background: #eaf0e7; }
 .capability-card h3 { font-size: 22px; margin-bottom: 10px; }.capability-card p { color: var(--muted); line-height: 1.75; }
 .quiet-link { display: inline-flex; align-items: center; gap: 5px; color: var(--primary-dark); font-size: 13px; font-weight: 700; }
+.capability-detail-list { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 8px; }
 button.quiet-link { border: 0; background: none; padding: 0; cursor: pointer; }
 .flow-band { padding: 76px 0 82px; background: #3f4941; color: #fff; overflow: hidden; position: relative; }
 .flow-band::after { content: ""; position: absolute; inset: 0; opacity: .08; background-image: radial-gradient(circle, #fff 2px, transparent 2px); background-size: 30px 30px; }
