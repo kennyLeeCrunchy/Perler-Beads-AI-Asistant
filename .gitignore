@@ -2,6 +2,7 @@
 frontend/node_modules/
 frontend/dist/
 frontend/.npm-cache/
+frontend/.vite/
 backend/.venv/
 backend/.env
 backend/runtime/*
