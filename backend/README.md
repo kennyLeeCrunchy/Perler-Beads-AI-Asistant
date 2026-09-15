@@ -9,10 +9,14 @@ cd D:\vscodePro\pindou\APP\backend
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+# 编辑 .env，填入 DASHSCOPE_API_KEY
 python -m uvicorn app.api_main:app --host 127.0.0.1 --port 8000
 ```
 
 或者运行 `python run_api.py`。局域网验证使用 `python run_lan.py`，它监听 `0.0.0.0:8000`。访问 `/docs` 查看 OpenAPI 文档；根路径 `/` 返回 404 是预期行为。
+
+启动时会自动读取当前目录的 `.env`。如果系统环境变量中已经存在同名配置，则系统环境变量优先；`.env` 只用于本地开发，不要提交真实密钥到 GitHub。
 
 ## 接口
 

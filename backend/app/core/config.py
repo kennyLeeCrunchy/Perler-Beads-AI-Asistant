@@ -4,8 +4,11 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
+load_dotenv(ROOT_DIR / ".env", override=False)
 DATA_DIR = ROOT_DIR / "app" / "data"
 MARD_PALETTE_PATH = ROOT_DIR / "color_standards" / "mard_221_colors_vertical.csv"
 runtime_override = os.getenv("PINDOU_RUNTIME_DIR", "").strip()
