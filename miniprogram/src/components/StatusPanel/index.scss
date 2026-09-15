@@ -1,7 +1,0 @@
-.status-panel { margin: 32rpx 0; padding: 40rpx 28rpx; border-radius: 24rpx; background: #f7f8f5; text-align: center; }
-.status-panel__title, .status-panel__description { display: block; }
-.status-panel__title { color: #1d2a25; font-size: 30rpx; font-weight: 600; }
-.status-panel__description { margin-top: 12rpx; color: #6b756f; font-size: 25rpx; line-height: 1.6; }
-.status-panel__spinner { width: 44rpx; height: 44rpx; margin: 0 auto 20rpx; border: 5rpx solid #dfe8e1; border-top-color: #257554; border-radius: 50%; animation: status-spin .8s linear infinite; }
-.status-panel__action { display: inline-flex; margin-top: 24rpx; padding: 0 32rpx; background: #fff; color: #257554; border: 1rpx solid #cbd9d0; border-radius: 999rpx; font-size: 26rpx; line-height: 68rpx; }
-@keyframes status-spin { to { transform: rotate(360deg); } }

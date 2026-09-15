@@ -1,7 +1,0 @@
-{
-  "description": "复制为 project.private.config.json，并按实际开发者工具设置修改。AppID 请优先直接写入 project.config.json。",
-  "projectname": "拼豆助手（本地）",
-  "setting": {
-    "compileHotReLoad": true
-  }
-}
