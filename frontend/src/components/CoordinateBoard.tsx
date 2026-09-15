@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 interface CoordinateBoardProps {
   children: ReactNode;
@@ -6,12 +6,13 @@ interface CoordinateBoardProps {
   mirror?: boolean;
   assist?: boolean;
   guideLabel?: string;
+  zoom?: number;
 }
 
-export function CoordinateBoard({ children, size = 24, mirror = false, assist = false, guideLabel }: CoordinateBoardProps) {
+export function CoordinateBoard({ children, size = 24, mirror = false, assist = false, guideLabel, zoom = 1 }: CoordinateBoardProps) {
   const numbers = Array.from({ length: size }, (_, index) => mirror ? size - index : index + 1);
   return (
-    <div className={`coordinate-board ${assist ? 'assist-board' : ''}`}>
+    <div className={`coordinate-board ${assist ? 'assist-board' : ''}`} style={{ '--board-zoom': zoom } as CSSProperties}>
       <span className="axis-corner axis-corner-top-left" />
       <div className="axis axis-horizontal axis-top" style={{ gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))` }}>{numbers.map((number) => <span key={`top-${number}`}>{number}</span>)}</div>
       <span className="axis-corner axis-corner-top-right" />
