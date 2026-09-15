@@ -12,7 +12,8 @@ const navItems = [
 function Brand() {
   return (
     <NavLink to="/" className="brand" aria-label="返回首页">
-      <span className="brand-logo" role="img" aria-label="智绘拼豆助手，AI 拼豆创作工具，PerLabo" />
+      <span className="brand-mark-wrap"><img src="/perlabo-beaker-mark.png" alt="" className="brand-mark" /></span>
+      <span className="brand-name">Perlabo拼豆实验室</span>
     </NavLink>
   );
 }
@@ -30,8 +31,6 @@ export function Navbar() {
           {navItems.map(({ to, label }) => <NavLink key={to} to={to}>{label}</NavLink>)}
         </nav>
         <div className="account-area">
-          <button className="login-link" onClick={() => window.dispatchEvent(new CustomEvent('app-toast', { detail: '登录功能将在正式版开放' }))}>登录/注册</button>
-          <img src="/avatar.svg" alt="头像占位" className="avatar" />
           <IconButton className="menu-button" aria-label="打开导航" onClick={() => setOpen(true)}><Menu size={22} /></IconButton>
         </div>
       </header>

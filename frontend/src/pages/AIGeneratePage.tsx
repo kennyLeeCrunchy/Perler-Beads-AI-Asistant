@@ -10,7 +10,7 @@ import { UploadArea } from '../components/UploadArea';
 export function AIGeneratePage() {
   const navigate = useNavigate();
   const [mode, setMode] = useState<'text' | 'upload'>('text');
-  const [prompt, setPrompt] = useState('一只戴黄色围巾的可爱柴犬，正面，简洁背景');
+  const [prompt, setPrompt] = useState('');
   const [referenceFile, setReferenceFile] = useState<File>();
   const [referenceTreatment, setReferenceTreatment] = useState<'subject' | 'whole'>('subject');
   const [subjectSituation, setSubjectSituation] = useState<'unknown' | 'single' | 'multiple' | 'none'>('unknown');
@@ -25,8 +25,9 @@ export function AIGeneratePage() {
   const [candidates, setCandidates] = useState<AiImageResult[]>([]);
   const [cleanResult, setCleanResult] = useState<CleanReferenceResult>();
   const [error, setError] = useState('');
+  const examplePrompt = '一只戴黄色围巾的可爱柴犬，正面，简洁背景';
 
-  const generate = async () => {
+  const generate = async (promptOverride?: string) => {
     if (mode === 'upload') {
       if (!referenceFile) {
         setError('请先选择一张参考图片。');
@@ -67,7 +68,8 @@ export function AIGeneratePage() {
       }
       return;
     }
-    if (!prompt.trim()) {
+    const effectivePrompt = promptOverride?.trim() || prompt.trim();
+    if (!effectivePrompt) {
       setError('请输入图案描述。');
       setStatus('error');
       return;
@@ -76,7 +78,7 @@ export function AIGeneratePage() {
     setError('');
     try {
       const results = await Promise.all(
-        Array.from({ length: count }, () => generateAiImage(prompt.trim(), transparent)),
+        Array.from({ length: count }, () => generateAiImage(effectivePrompt, transparent)),
       );
       setCandidates(results);
       setSelected(0);
@@ -138,7 +140,7 @@ export function AIGeneratePage() {
       <section className="settings-panel panel-card">
         <div className="panel-tabs large"><button className={mode === 'text' ? 'is-active' : ''} onClick={() => switchMode('text')}>文字生成</button><button className={mode === 'upload' ? 'is-active' : ''} onClick={() => switchMode('upload')}>上传参考图</button></div>
         {mode === 'text'
-          ? <label className="field-stack"><span>描述你的创意</span><textarea value={prompt} onChange={(event) => setPrompt(event.target.value)} /><small>建议描述主体、视角、配饰和背景复杂度。</small></label>
+          ? <label className="field-stack"><span>描述你的创意</span><textarea value={prompt} onChange={(event) => setPrompt(event.target.value)} placeholder="建议描述主体、视角、配饰和背景复杂度。" /><small>输入内容后灰度提示会自动消失。</small></label>
           : <div className="upload-flow">
             <UploadArea compact onUploaded={(file) => { setReferenceFile(file); setStatus('empty'); setError(''); }} onRemoved={() => { setReferenceFile(undefined); setStatus('empty'); setError(''); }} />
             <div className="field-stack">
@@ -183,26 +185,26 @@ export function AIGeneratePage() {
               </label>}
             <div className="info-note flow-explainer"><strong>一次清稿，三档图纸共用</strong><span>后端会先调用一次图生图清稿，再由确定性算法生成 52×52、78×78、104×104 三档图纸，不重复消耗 AI 次数。</span></div>
           </div>}
-        <div className={`form-grid ${mode === 'upload' ? 'single-column' : ''}`}>{mode === 'text' && <label className="field-stack"><span>主体类型</span><select><option>宠物</option><option>人物头像</option><option>小动物</option><option>挂饰图案</option></select></label>}<label className="field-stack"><span>品牌色卡</span><select value={brand} onChange={(event) => setBrand(event.target.value as 'Artkal' | 'Mard')}><option value="Artkal">Artkal M 系列</option><option value="Mard">Mard 221 色</option></select><small>转换阶段会匹配所选品牌的真实色号。</small></label></div>
+        <div className={`form-grid ${mode === 'upload' ? 'single-column' : ''}`}><label className="field-stack"><span>品牌色卡</span><select value={brand} onChange={(event) => setBrand(event.target.value as 'Artkal' | 'Mard')}><option value="Artkal">Artkal M 系列</option><option value="Mard">Mard 221 色</option></select><small>转换阶段会匹配所选品牌的真实色号。</small></label></div>
         <div className="field-stack"><span>拼豆板尺寸</span><div className="choice-cards">{['52×52', '78×78', '104×104'].map((item) => <button key={item} className={size === item ? 'is-active' : ''} onClick={() => setSize(item)}><strong>{item}</strong><small>{item === '52×52' ? '轻量挂饰' : item === '78×78' ? '适中细节' : '丰富细节'}</small></button>)}</div><small>尺寸越大，可以保留越多细节，但制作成本也越高。</small></div>
         <div className="switch-card"><div><strong>透明底 / 不规则图形</strong><span>生成干净单主体，背景不参与填豆和数量统计。</span></div><button className={`switch ${transparent ? 'is-on' : ''}`} onClick={() => setTransparent(!transparent)} aria-label="切换透明底"><i /></button></div>
         {transparent && <div className="info-note">开启后，系统会自动去除背景，只保留清晰主体；如果背景过于复杂，会提示你重新生成，避免背景被误算成拼豆。</div>}
         {mode === 'text' && <div className="field-stack"><span>生成数量</span><div className="segmented">{[1, 2, 4].map((item) => <button key={item} className={count === item ? 'is-active' : ''} onClick={() => setCount(item)}>{item} 张</button>)}</div></div>}
-        <Button fullWidth icon={<WandSparkles size={18} />} onClick={generate} disabled={status === 'loading'}>{mode === 'upload' ? 'AI 清稿并继续转图' : status === 'loading' ? '正在调用 AI 服务…' : '生成候选图'}</Button>
+        <Button fullWidth icon={<WandSparkles size={18} />} onClick={() => void generate()} disabled={status === 'loading'}>{mode === 'upload' ? 'AI 清稿并继续转图' : status === 'loading' ? '正在调用 AI 服务…' : '生成候选图'}</Button>
         {mode === 'upload' && <button type="button" className="direct-convert-link" onClick={convertReferenceDirectly}>跳过 AI 风格化，直接转为拼豆图纸</button>}
       </section>
       <section className="results-panel panel-card">
-        <div className="results-head"><div><span className="eyebrow">{mode === 'upload' ? '参考图处理' : '候选结果'}</span><h2>{mode === 'upload' ? '确认处理方式后再生成' : '选择最接近灵感的一张'}</h2></div>{status === 'done' && <Button variant="ghost" icon={<RefreshCw size={16} />} onClick={generate}>重新生成</Button>}</div>
+        <div className="results-head"><div><span className="eyebrow">{mode === 'upload' ? '参考图处理' : '候选结果'}</span><h2>{mode === 'upload' ? '确认处理方式后再生成' : '选择最接近灵感的一张'}</h2></div>{status === 'done' && <Button variant="ghost" icon={<RefreshCw size={16} />} onClick={() => void generate()}>重新生成</Button>}</div>
         {status === 'empty' && (mode === 'upload'
-          ? <EmptyState title="上传图片并选择处理方式" description="主体模式会提取已有的人物、宠物或物体；整图模式保留完整场景。清稿完成后可继续选择三档图纸。" action={<Button variant="secondary" onClick={generate}>开始 AI 清稿</Button>} />
-          : <EmptyState title="生成你的第一组拼豆图案" description="填写描述并选择拼豆友好参数，真实 AI 候选图会出现在这里。" action={<Button variant="secondary" onClick={generate}>使用示例生成</Button>} />)}
+          ? <EmptyState title="上传图片并选择处理方式" description="主体模式会提取已有的人物、宠物或物体；整图模式保留完整场景。清稿完成后可继续选择三档图纸。" action={<Button variant="secondary" onClick={() => void generate()}>开始 AI 清稿</Button>} />
+          : <EmptyState title="生成你的第一组拼豆图案" description="填写描述并选择拼豆友好参数，真实 AI 候选图会出现在这里。" action={<Button variant="secondary" onClick={() => { setPrompt(examplePrompt); void generate(examplePrompt); }}>使用示例生成</Button>} />)}
         {status === 'loading' && <><LoadingState label="AI 正在生成并处理图片" /><div className="generation-steps"><span className="done">理解描述</span><span className="active">调用通义万相</span><span>透明底质量校验</span></div></>}
-        {status === 'error' && <ErrorState title="生成没有完成" description={error} action={<Button variant="secondary" onClick={generate}>重新尝试</Button>} />}
+        {status === 'error' && <ErrorState title="生成没有完成" description={error} action={<Button variant="secondary" onClick={() => void generate()}>重新尝试</Button>} />}
         {status === 'done' && (mode === 'upload' && cleanResult
           ? <><div className="clean-reference-result"><div className="generated-art"><img src={resolveApiMediaUrl(cleanResult.image_url)} alt="AI 清稿结果" /></div><div><span className="success-badge">AI 清稿完成</span><h3>准备生成三档图纸</h3><p>算法版本 {cleanResult.algorithm_version} · AI 调用 {cleanResult.ai_passes} 次</p><p>识别为 {cleanResult.source_type === 'subject' ? '独立主体' : '完整场景'}，下一步将匹配真实 {brand} 色卡。</p></div></div><div className="result-action"><div><Sparkles /><span><small>清稿结果已固定</small><strong>52 / 78 / 104 三档共用同一份清稿</strong></span></div><Button onClick={useCleanReference}>选择尺寸并转为图纸</Button></div></>
           : <><div className="result-grid">{candidates.map((candidate, index) => <button key={candidate.source_path} className={`result-card ${selected === index ? 'is-selected' : ''}`} onClick={() => setSelected(index)}><span className="result-check">{selected === index ? '✓' : ''}</span><div className="generated-art"><img src={resolveApiMediaUrl(candidate.image_url)} alt={`AI 候选图 ${index + 1}`} /></div><footer><span>候选图 {index + 1}</span><small>{size}</small></footer></button>)}</div><div className="result-action"><div><Sparkles /><span><small>已选择候选图 {selected + 1}</small><strong>接下来匹配真实 {brand} 色卡</strong></span></div><Button onClick={useCandidate}>使用这张图并转为拼豆图纸</Button></div></>)}
       </section>
     </div>
-    <button className="mobile-sticky-action" onClick={generate} disabled={status === 'loading'}><Sparkles size={18} />{mode === 'upload' ? '检查风格化设置' : '生成候选图'} <ChevronDown size={16} /></button>
+    <button className="mobile-sticky-action" onClick={() => void generate()} disabled={status === 'loading'}><Sparkles size={18} />{mode === 'upload' ? '检查风格化设置' : '生成候选图'} <ChevronDown size={16} /></button>
   </ResponsivePageContainer>;
 }

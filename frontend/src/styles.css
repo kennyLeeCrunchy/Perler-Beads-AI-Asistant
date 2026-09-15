@@ -37,17 +37,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .panel-card { background: rgba(255, 253, 250, .96); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 8px 30px rgba(73, 56, 44, .055); }
 .eyebrow { color: var(--primary); text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 800; }
 
-.navbar { position: fixed; z-index: 100; inset: 0 0 auto; height: 80px; padding: 4px 40px; display: grid; grid-template-columns: 220px 1fr 220px; align-items: center; background: rgba(255, 255, 255, .94); border-bottom: 1px solid rgba(231, 224, 215, .8); backdrop-filter: blur(18px); }
-.brand { width: 220px; height: 72px; display: flex; align-items: center; }
-.brand-logo { width: 160px; height: 72px; display: block; background: url('/perlabo-logo-reference.png') -9px -33px / 178px 129px no-repeat; }
+.navbar { position: fixed; z-index: 100; inset: 0 0 auto; height: 80px; padding: 4px 40px; display: grid; grid-template-columns: 320px 1fr 160px; align-items: center; background: rgba(255, 255, 255, .94); border-bottom: 1px solid rgba(231, 224, 215, .8); backdrop-filter: blur(18px); }
+.brand { width: 320px; height: 72px; display: flex; align-items: center; gap: 11px; overflow: visible; }
+.brand-mark-wrap { width: 58px; height: 64px; flex: 0 0 58px; display: grid; place-items: center; position: relative; z-index: 2; }
+.brand-mark { width: 58px; height: 58px; display: block; object-fit: contain; transform-origin: center bottom; transition: transform .24s cubic-bezier(.2,.8,.2,1), filter .24s ease; }
+.brand:hover .brand-mark, .brand:focus-visible .brand-mark { transform: scale(1.22) rotate(-2deg); filter: drop-shadow(0 8px 10px rgba(91, 59, 42, .18)); }
+.brand-name { color: #413831; white-space: nowrap; font-family: "STKaiti", "KaiTi", "Kaiti SC", "Microsoft YaHei", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: .045em; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: 56px; font-size: 15px; font-weight: 620; height: 100%; }
 .desktop-nav a { position: relative; height: 50px; display: grid; place-items: center; color: #58524d; }
 .desktop-nav a::after { content: ""; position: absolute; left: 50%; bottom: 3px; width: 0; height: 2px; border-radius: 2px; background: var(--primary); transform: translateX(-50%); transition: .2s; }
 .desktop-nav a:hover, .desktop-nav a.active { color: var(--primary-dark); }
 .desktop-nav a.active::after { width: 24px; }
-.account-area { width: 220px; display: flex; gap: 22px; align-items: center; justify-content: flex-end; }
-.login-link { border: 0; background: none; cursor: pointer; padding: 12px 0; font-weight: 600; white-space: nowrap; }
-.avatar { width: 44px; height: 44px; border-radius: 50%; display: block; object-fit: cover; background: #dedede; }
+.account-area { width: 160px; display: flex; gap: 22px; align-items: center; justify-content: flex-end; }
 .icon-button { border: 0; background: transparent; width: 42px; height: 42px; display: inline-grid; place-items: center; border-radius: 12px; cursor: pointer; padding: 0; }
 .icon-button:hover { background: #f1ece6; }
 .icon-button:disabled { opacity: .35; cursor: not-allowed; }
@@ -159,7 +160,7 @@ button.quiet-link { border: 0; background: none; padding: 0; cursor: pointer; }
 .panel-tabs button { min-height: 38px; flex: 1; border: 0; border-radius: 9px; background: transparent; cursor: pointer; font-weight: 700; color: var(--muted); }.panel-tabs button.is-active { color: var(--ink); background: #fff; box-shadow: 0 2px 7px rgba(65,50,40,.08); }
 .panel-tabs.large button { min-height: 44px; }.field-stack { display: grid; gap: 9px; margin-bottom: 22px; }.field-stack > span, fieldset legend { font-size: 13px; font-weight: 780; }.field-stack > small { color: var(--muted); line-height: 1.5; }
 textarea, select, input { border: 1px solid #dcd4cb; background: #fff; color: var(--ink); border-radius: 11px; }
-textarea { min-height: 122px; padding: 14px; line-height: 1.65; resize: vertical; }select { min-height: 44px; padding: 0 13px; }
+textarea { min-height: 122px; padding: 14px; line-height: 1.65; resize: vertical; }textarea::placeholder { color: #aaa39c; opacity: 1; }select { min-height: 44px; padding: 0 13px; }
 .field-stack > input { min-height: 44px; padding: 0 13px; }
 .filter-chips button { border: 1px solid var(--line); background: #fff; border-radius: 999px; min-height: 38px; padding: 0 14px; cursor: pointer; }.filter-chips button.is-active { border-color: #dc9a84; background: #faebe4; color: var(--primary-dark); font-weight: 750; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 12px; }.choice-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }.choice-cards button { padding: 12px 8px; border-radius: 12px; border: 1px solid var(--line); background: #fff; cursor: pointer; text-align: left; display: grid; gap: 4px; }.choice-cards button.is-active { border-color: var(--primary); background: #fff7f3; box-shadow: inset 0 0 0 1px var(--primary); }.choice-cards small { color: var(--muted); font-size: 10px; }
