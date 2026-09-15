@@ -11,10 +11,12 @@ const navItems = [
 
 function Brand() {
   return (
-    <NavLink to="/" className="brand" aria-label="返回首页">
-      <span className="brand-mark-wrap"><img src="/perlabo-beaker-mark.png" alt="" className="brand-mark" /></span>
+    <div className="brand">
+      <NavLink to="/" className="brand-mark-wrap" aria-label="返回首页">
+        <img src="/perlabo-beaker-mark.png" alt="" className="brand-mark" />
+      </NavLink>
       <span className="brand-name">Perlabo拼豆实验室</span>
-    </NavLink>
+    </div>
   );
 }
 
