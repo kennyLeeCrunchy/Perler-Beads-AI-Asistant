@@ -28,7 +28,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 $env:DASHSCOPE_API_KEY="你的 DashScope Key"
-$env:PINDOU_CORS_ORIGINS="http://127.0.0.1:5173,http://localhost:5173"
+$env:PINDOU_CORS_ORIGINS="http://127.0.0.1:5180,http://localhost:5180"
 python run_api.py
 ```
 
@@ -40,7 +40,7 @@ npm ci
 npm run dev
 ```
 
-访问 `http://127.0.0.1:5173`；FastAPI 文档位于 `http://127.0.0.1:8000/docs`。
+访问 `http://127.0.0.1:5180`；FastAPI 文档位于 `http://127.0.0.1:8000/docs`。
 
 ## 局域网启动
 
@@ -49,7 +49,7 @@ npm run dev
 ```powershell
 cd D:\vscodePro\pindou\APP\backend
 .\.venv\Scripts\Activate.ps1
-$env:PINDOU_CORS_ORIGINS="http://localhost:5173,http://127.0.0.1:5173,http://你的局域网IP:5173"
+$env:PINDOU_CORS_ORIGINS="http://localhost:5180,http://127.0.0.1:5180,http://你的局域网IP:5180"
 python run_lan.py
 ```
 
@@ -60,7 +60,7 @@ cd D:\vscodePro\pindou\APP\frontend
 npm run dev -- --host 0.0.0.0
 ```
 
-然后在同一局域网的手机、平板或其他电脑打开 `http://你的局域网IP:5173`。Windows 防火墙需要允许 Python 和 Node/Vite 在“专用网络”访问 8000、5173 端口。
+然后在同一局域网的手机、平板或其他电脑打开 `http://你的局域网IP:5180`。Windows 防火墙需要允许 Python 和 Node/Vite 在“专用网络”访问 8000、5180 端口。
 
 生产预览：
 

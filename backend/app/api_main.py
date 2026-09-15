@@ -23,7 +23,7 @@ allowed_origins = [
     origin.strip()
     for origin in os.getenv(
         "PINDOU_CORS_ORIGINS",
-        "http://127.0.0.1:5173,http://localhost:5173",
+        "http://127.0.0.1:5180,http://localhost:5180",
     ).split(",")
     if origin.strip()
 ]
