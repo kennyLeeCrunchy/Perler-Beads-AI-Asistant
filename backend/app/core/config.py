@@ -19,7 +19,9 @@ class Settings:
     dashscope_api_key: str | None
     dashscope_base_url: str
     dashscope_model: str
+    dashscope_i2i_model: str
     dashscope_size: str
+    dashscope_i2i_timeout: int
 
 
 def get_settings() -> Settings:
@@ -27,5 +29,7 @@ def get_settings() -> Settings:
         dashscope_api_key=os.getenv("DASHSCOPE_API_KEY"),
         dashscope_base_url=os.getenv("DASHSCOPE_BASE_URL", "https://dashscope.aliyuncs.com/api/v1"),
         dashscope_model=os.getenv("DASHSCOPE_IMAGE_MODEL", "wan2.6-t2i"),
+        dashscope_i2i_model=os.getenv("DASHSCOPE_I2I_MODEL", "wan2.5-i2i-preview"),
         dashscope_size=os.getenv("DASHSCOPE_IMAGE_SIZE", "1280*1280"),
+        dashscope_i2i_timeout=int(os.getenv("PINDOU_I2I_TIMEOUT", "240")),
     )

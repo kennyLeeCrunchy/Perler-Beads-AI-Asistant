@@ -1,19 +1,22 @@
 from __future__ import annotations
 
 import os
+import io
 from pathlib import Path
 from uuid import uuid4
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from PIL import Image
 from pydantic import BaseModel, Field
 
 from app.core.config import RUNTIME_DIR, get_settings
 from app.core.dashscope_client import DashScopeClient, build_bead_prompt
+from app.core.image_pipeline import PIPELINE_VERSION, create_clean_reference
 from app.core.mask_processor import create_transparent_foreground
 
 
 router = APIRouter(prefix="/api/ai", tags=["ai"])
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 
 
 class GenerateImageRequest(BaseModel):
@@ -87,4 +90,52 @@ def generate_image(payload: GenerateImageRequest) -> dict:
         "transparent_irregular": payload.transparent_irregular,
         "mask_method": mask_method,
         "foreground_ratio": foreground_ratio,
+    }
+
+
+@router.post("/clean-reference")
+async def clean_reference(
+    image: UploadFile = File(...),
+    mode: str = Form(default="auto"),
+    subject_target: str = Form(default=""),
+    prompt: str = Form(default=""),
+) -> dict:
+    if not image.filename:
+        raise HTTPException(status_code=400, detail="请上传参考图片")
+    suffix = Path(image.filename).suffix.lower()
+    if suffix not in {".png", ".jpg", ".jpeg", ".webp"}:
+        raise HTTPException(status_code=400, detail="只支持 PNG、JPG、JPEG 和 WEBP 图片")
+    contents = await image.read(MAX_UPLOAD_BYTES + 1)
+    if len(contents) > MAX_UPLOAD_BYTES:
+        raise HTTPException(status_code=400, detail="图片不能超过 10MB")
+    try:
+        with Image.open(io.BytesIO(contents)) as uploaded:
+            uploaded.verify()
+        result = create_clean_reference(
+            source_bytes=contents,
+            mode=mode,
+            subject_target=subject_target,
+            user_prompt=prompt,
+            output_dir=RUNTIME_DIR / "generated",
+        )
+    except HTTPException:
+        raise
+    except TimeoutError as exc:
+        raise HTTPException(status_code=504, detail=str(exc)) from exc
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    return {
+        "clean_reference_id": result.clean_reference_id,
+        "task_id": result.task_id,
+        "model": result.model,
+        "algorithm_version": result.prompt_version,
+        "pipeline": PIPELINE_VERSION,
+        "ai_passes": 1,
+        "source_type": result.source_type,
+        "confidence": result.confidence,
+        "mask_method": result.mask_method,
+        "foreground_ratio": result.foreground_ratio,
+        "image_url": f"/runtime/generated/{result.pattern_source_path.name}",
+        "raw_image_url": f"/runtime/generated/{result.raw_path.name}",
     }

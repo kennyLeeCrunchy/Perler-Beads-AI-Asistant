@@ -9,7 +9,9 @@ from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from PIL import Image
 
 from app.core.config import DATA_DIR, MARD_PALETTE_PATH, RUNTIME_DIR
+from app.core.bundle import generate_pattern_bundle
 from app.core.exporter import render_pattern_png
+from app.core.image_pipeline import read_clean_reference
 from app.core.mask_processor import create_transparent_foreground
 from app.core.palette import load_mard_palette, load_palette, load_presets, resolve_palette
 from app.core.quantizer import quantize_image
@@ -79,6 +81,64 @@ async def generate_pattern(
         "counts": pattern_counts_for_ui(pattern),
         "preview_data_url": "data:image/png;base64," + base64.b64encode(preview_png).decode("ascii"),
     }
+
+
+@router.post("/bundle")
+async def generate_pattern_bundle_route(
+    image: UploadFile | None = File(default=None),
+    source_path: str | None = Form(default=None),
+    clean_reference_id: str | None = Form(default=None),
+    brand: str = Form(default="Mard"),
+    preset: str = Form(default="221"),
+    max_colors: int = Form(default=20, ge=0, le=221),
+    similarity_threshold: float = Form(default=18, ge=0, le=100),
+    use_transparent_mask: bool = Form(default=False),
+) -> dict:
+    try:
+        input_path, resolved_reference_id = await _resolve_bundle_input(
+            image=image,
+            source_path=source_path,
+            clean_reference_id=clean_reference_id,
+        )
+        palette = _resolve_palette(brand, preset)
+        with Image.open(input_path) as source:
+            bundle = generate_pattern_bundle(
+                source,
+                palette=palette,
+                max_colors=max_colors,
+                similarity_threshold=similarity_threshold,
+                use_transparent_mask=use_transparent_mask,
+                clean_reference_id=resolved_reference_id,
+            )
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return {"brand": "Mard" if brand.strip().lower() == "mard" else "Artkal", **bundle}
+
+
+def _resolve_palette(brand: str, preset: str) -> list:
+    normalized_brand = brand.strip().lower()
+    if normalized_brand == "artkal":
+        colors = load_palette(DATA_DIR / "artkal_m_series.json")
+        presets = load_presets(DATA_DIR / "artkal_presets.json")
+        return resolve_palette(colors, presets, preset)
+    if normalized_brand == "mard":
+        return list(load_mard_palette(MARD_PALETTE_PATH).values())
+    raise ValueError("Unsupported palette brand; use Artkal or Mard")
+
+
+async def _resolve_bundle_input(
+    *,
+    image: UploadFile | None,
+    source_path: str | None,
+    clean_reference_id: str | None,
+) -> tuple[Path, str | None]:
+    if clean_reference_id:
+        metadata = read_clean_reference(clean_reference_id)
+        return ensure_runtime_path(
+            RUNTIME_DIR / "generated" / metadata["source_path"],
+            RUNTIME_DIR / "generated",
+        ), clean_reference_id
+    return await _resolve_input_image(image=image, source_path=source_path), None
 
 
 async def _resolve_input_image(image: UploadFile | None, source_path: str | None) -> Path:

@@ -26,5 +26,9 @@ export interface Work {
   gridSize?: number;
   patternId?: string;
   previewDataUrl?: string;
+  cleanReferenceId?: string;
+  algorithmVersion?: string;
+  pipeline?: string;
+  mirror?: boolean;
   motif: 'dog' | 'girl' | 'whale' | 'flower';
 }

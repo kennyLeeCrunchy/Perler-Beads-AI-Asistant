@@ -1,0 +1,15 @@
+# Public APP repository local files
+frontend/node_modules/
+frontend/dist/
+frontend/.npm-cache/
+backend/.venv/
+backend/.env
+backend/runtime/*
+!backend/runtime/uploads/
+!backend/runtime/generated/
+!backend/runtime/exports/
+!backend/runtime/uploads/.gitkeep
+!backend/runtime/generated/.gitkeep
+!backend/runtime/exports/.gitkeep
+__pycache__/
+*.py[cod]

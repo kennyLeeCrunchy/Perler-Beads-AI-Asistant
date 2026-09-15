@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import io
 import json
 import re
 from collections import Counter
@@ -7,6 +8,7 @@ from collections import Counter
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import Response
 from pydantic import BaseModel, Field
+from PIL import Image
 
 from app.core.config import RUNTIME_DIR
 from app.core.exporter import render_pattern_png
@@ -56,6 +58,34 @@ def export_png(payload: ExportPngRequest) -> Response:
         content=png,
         media_type="image/png",
         headers={"Content-Disposition": f'attachment; filename="pindou-{filename_id}.png"'},
+    )
+
+
+@router.post("/pdf")
+def export_pdf(payload: ExportPngRequest) -> Response:
+    try:
+        if payload.cells is not None:
+            pattern = _pattern_from_request(payload)
+        elif payload.pattern_id:
+            if not re.fullmatch(r"[0-9a-f]{32}", payload.pattern_id):
+                raise ValueError("Invalid pattern identifier")
+            pattern_path = ensure_runtime_path(
+                RUNTIME_DIR / "generated" / f"{payload.pattern_id}.json",
+                RUNTIME_DIR / "generated",
+            )
+            pattern = pattern_from_dict(json.loads(pattern_path.read_text(encoding="utf-8")))
+        else:
+            raise ValueError("Provide editable pattern cells or a pattern_id")
+        image = Image.open(io.BytesIO(render_pattern_png(pattern, cell_size=18))).convert("RGB")
+        output = io.BytesIO()
+        image.save(output, format="PDF", resolution=150.0)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    filename_id = payload.pattern_id or "edited"
+    return Response(
+        content=output.getvalue(),
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="pindou-{filename_id}.pdf"'},
     )
 
 

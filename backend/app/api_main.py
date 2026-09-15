@@ -15,8 +15,8 @@ from app.core.config import RUNTIME_DIR
 
 app = FastAPI(
     title="Pindou API",
-    version="0.2.0",
-    description="拼豆 AI 生图、品牌色卡量化与导出 API。",
+    version="0.3.0",
+    description="Perlabo 拼豆 AI 生图、图生图清稿、品牌色卡量化与导出 API。",
 )
 
 allowed_origins = [
@@ -46,3 +46,8 @@ app.mount(
     StaticFiles(directory=RUNTIME_DIR / "generated"),
     name="generated-runtime",
 )
+
+
+@app.get("/api/health")
+def health() -> dict[str, str]:
+    return {"status": "ok", "service": "perlabo-api", "version": app.version}

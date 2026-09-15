@@ -12,6 +12,7 @@ interface BeadGridProps {
   completed?: Set<number>;
   mirror?: boolean;
   showNumbers?: boolean;
+  showOutline?: boolean;
   displayMode?: 'beads' | 'pattern';
   overrides?: Map<number, string | null>;
   cells?: Array<string | null>;
@@ -60,7 +61,7 @@ export function buildGrid(size = 24, motif = 'dog') {
   return Array.from({ length: size * size }, (_, index) => motifColor(index % size, Math.floor(index / size), size, motif));
 }
 
-export function BeadGrid({ motif = 'dog', size = 24, selected = new Set(), highlightedColor, completed = new Set(), mirror, showNumbers, displayMode = 'beads', overrides = new Map(), cells: providedCells, colors = palette, onCellClick, onCellHover }: BeadGridProps) {
+export function BeadGrid({ motif = 'dog', size = 24, selected = new Set(), highlightedColor, completed = new Set(), mirror, showNumbers, showOutline = false, displayMode = 'beads', overrides = new Map(), cells: providedCells, colors = palette, onCellClick, onCellHover }: BeadGridProps) {
   const cells = useMemo(() => providedCells ?? buildGrid(size, motif), [providedCells, size, motif]);
   const colorCode = (hex: string) => colors.find((item) => item.hex.toLowerCase() === hex.toLowerCase())?.code ?? '';
   const isLight = (hex: string) => {
@@ -78,9 +79,15 @@ export function BeadGrid({ motif = 'dog', size = 24, selected = new Set(), highl
           const isDimmed = !!highlightedColor && color !== highlightedColor;
           const x = (index % size) + 1;
           const y = Math.floor(index / size) + 1;
+          const neighbor = (dx: number, dy: number) => cells[(y - 1 + dy) * size + (x - 1 + dx)];
+          const isOutline = Boolean(showOutline && color && ([[-1, 0], [1, 0], [0, -1], [0, 1]] as const).some(([dx, dy]) => {
+            const nx = x - 1 + dx;
+            const ny = y - 1 + dy;
+            return nx < 0 || ny < 0 || nx >= size || ny >= size || !neighbor(dx, dy);
+          }));
           return <button
             key={index}
-            className={`bead-cell ${color ? 'has-bead' : 'is-empty'} ${color && isLight(color) ? 'is-light-color' : ''} ${selected.has(index) ? 'is-selected' : ''} ${completed.has(index) ? 'is-completed' : ''} ${isDimmed ? 'is-dimmed' : ''}`}
+            className={`bead-cell ${color ? 'has-bead' : 'is-empty'} ${color && isLight(color) ? 'is-light-color' : ''} ${selected.has(index) ? 'is-selected' : ''} ${completed.has(index) ? 'is-completed' : ''} ${isDimmed ? 'is-dimmed' : ''} ${isOutline ? 'is-outline' : ''}`}
             style={{ '--bead-color': color ?? 'transparent' } as React.CSSProperties}
             aria-label={`坐标 ${x}, ${y}${color ? `，颜色 ${colorCode(color)}` : '，透明格'}`}
             onClick={(event) => onCellClick?.(index, color, event)}

@@ -72,6 +72,7 @@ export function EditorPage() {
         updatedAt: new Date().toISOString(),
         palette: nextPalette,
         previewDataUrl: undefined,
+        mirror,
       });
       setDirty(false);
       showToast('作品和颜色统计已保存到当前浏览器');

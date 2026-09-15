@@ -1,48 +1,96 @@
-# APP 主产品
+# Perlabo APP
 
-`APP` 只放当前产品实际使用的前后端代码。
+这是公开发布的“小豆点拼豆实验室 Perlabo”应用部分，只包含 Web 前端和 Web/小程序共用的 FastAPI 后端。微信小程序源码与研发验证 Demo 保留在内部仓库，不属于本仓库。
 
 ```text
 APP/
-├─ frontend/   React + TypeScript + Vite
-└─ backend/    FastAPI + 图像处理 + Artkal/Mard 色卡
+├─ frontend/   React + TypeScript + Vite Web 应用
+└─ backend/    FastAPI、AI、图纸算法、色卡与导出
 ```
 
-## 联调地址
+## 功能链路
 
-| 服务 | 地址 | 说明 |
-|---|---|---|
-| React 页面 | `http://127.0.0.1:5173` | 用户实际访问的产品 |
-| FastAPI 文档 | `http://127.0.0.1:8000/docs` | 接口调试 |
-| FastAPI 根路径 | `http://127.0.0.1:8000/` | 预期返回 404 |
+```text
+Web 文生图 ─┐
+Web 图生图 ─┼→ 单次 bead_ready_52_v2 清稿 → 52/78/104 三档图纸 → 编辑 → 制作 → PNG/PDF
+小程序图生图 ─┘
+```
 
-## 后端
+Web 保留 AI 文生图；小程序通过同一后端只使用图生图清稿和图纸接口。
+
+## 本地启动
+
+后端：
 
 ```powershell
 cd D:\vscodePro\pindou\APP\backend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python -m uvicorn app.api_main:app --host 127.0.0.1 --port 8000
+$env:DASHSCOPE_API_KEY="你的 DashScope Key"
+$env:PINDOU_CORS_ORIGINS="http://127.0.0.1:5173,http://localhost:5173"
+python run_api.py
 ```
 
-当前生产 API：
-
-- `POST /api/ai/generate`
-- `POST /api/pattern/generate`
-- `GET /api/palettes/{palette_id}`
-- `POST /api/export/png`
-
-运行文件写入 `APP/backend/runtime`，仅生成图目录通过 HTTP 暴露。色卡原始及整理数据位于 `APP/backend/color_standards`。
-
-## 前端
+前端另开终端：
 
 ```powershell
 cd D:\vscodePro\pindou\APP\frontend
-npm install
+npm ci
 npm run dev
 ```
 
-Vite 会把 `/api` 和 `/runtime` 代理到 `127.0.0.1:8000`。分离部署时可使用 `VITE_API_BASE_URL` 指定公开后端地址。
+访问 `http://127.0.0.1:5173`；FastAPI 文档位于 `http://127.0.0.1:8000/docs`。
 
-## 功能边界
+## 局域网启动
 
-完整对应关系见 [FRONTEND_BACKEND_GAP.md](./FRONTEND_BACKEND_GAP.md)。其中“本地真实”表示功能确实可用，但数据只保存在当前浏览器；“演示”表示页面已经呈现，但尚无完整业务实现。
+后端：
+
+```powershell
+cd D:\vscodePro\pindou\APP\backend
+.\.venv\Scripts\Activate.ps1
+$env:PINDOU_CORS_ORIGINS="http://localhost:5173,http://127.0.0.1:5173,http://你的局域网IP:5173"
+python run_lan.py
+```
+
+前端：
+
+```powershell
+cd D:\vscodePro\pindou\APP\frontend
+npm run dev -- --host 0.0.0.0
+```
+
+然后在同一局域网的手机、平板或其他电脑打开 `http://你的局域网IP:5173`。Windows 防火墙需要允许 Python 和 Node/Vite 在“专用网络”访问 8000、5173 端口。
+
+生产预览：
+
+```powershell
+npm run build
+npm run preview -- --host 0.0.0.0
+```
+
+## API
+
+- `POST /api/ai/generate`：Web AI 文生图。
+- `POST /api/ai/clean-reference`：一次图生图清稿。
+- `POST /api/pattern/generate`：兼容的单档传统转图接口。
+- `POST /api/pattern/bundle`：同一清稿生成 52、78、104 三档图纸。
+- `GET /api/palette?brand=Artkal|Mard`：读取完整色卡。
+- `POST /api/export/png`：PNG 导出。
+- `POST /api/export/pdf`：PDF 导出。
+- `GET /api/health`：健康检查。
+
+## 安全边界
+
+公开仓库不包含 API Key、上传图片、生成图片、用户数据、模型缓存和 `.env`。后端运行文件写入 `backend/runtime`，只有生成结果目录通过 HTTP 暴露。局域网模式会让同一网络设备看到 Demo，请不要在不可信网络中直接暴露带有真实 AI Key 的服务。
+
+## 验证
+
+```powershell
+cd APP\backend
+python -m unittest discover -s tests -v
+
+cd ..\frontend
+npm ci
+npm run build
+```

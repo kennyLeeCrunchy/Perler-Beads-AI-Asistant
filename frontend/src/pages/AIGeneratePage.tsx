@@ -1,7 +1,7 @@
 import { ChevronDown, RefreshCw, Sparkles, WandSparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { generateAiImage, resolveApiMediaUrl, type AiImageResult } from '../api';
+import { cleanReference, generateAiImage, resolveApiMediaUrl, type AiImageResult, type CleanReferenceResult } from '../api';
 import { Button } from '../components/Button';
 import { EmptyState, ErrorState, LoadingState } from '../components/States';
 import { ResponsivePageContainer } from '../components/ResponsivePageContainer';
@@ -23,6 +23,7 @@ export function AIGeneratePage() {
   const [status, setStatus] = useState<'empty' | 'loading' | 'done' | 'error'>('empty');
   const [selected, setSelected] = useState(0);
   const [candidates, setCandidates] = useState<AiImageResult[]>([]);
+  const [cleanResult, setCleanResult] = useState<CleanReferenceResult>();
   const [error, setError] = useState('');
 
   const generate = async () => {
@@ -49,8 +50,21 @@ export function AIGeneratePage() {
           return;
         }
       }
-      setError(`输入已通过检查，但正式 APP 尚未接入${referenceTreatment === 'subject' ? '主体卡通化' : `整图${wholeImageStyle === 'pixel' ? '像素风' : '卡通风'}`}接口，因此不会伪装生成结果。你仍可选择跳过 AI 风格化，直接进入现有转图纸流程。`);
-      setStatus('error');
+      setStatus('loading');
+      setError('');
+      try {
+        const result = await cleanReference({
+          image: referenceFile,
+          mode: referenceTreatment === 'subject' ? 'subject' : 'scene',
+          subjectTarget: targetSubject,
+          prompt: wholeImageStyle === 'pixel' ? '适合拼豆的像素化信息归纳' : '适合拼豆的平滑卡通清稿',
+        });
+        setCleanResult(result);
+        setStatus('done');
+      } catch (reason) {
+        setError(reason instanceof Error ? reason.message : '参考图清稿失败，请稍后重试。');
+        setStatus('error');
+      }
       return;
     }
     if (!prompt.trim()) {
@@ -82,10 +96,25 @@ export function AIGeneratePage() {
     navigate('/convert', { state: { source: 'upload', image: referenceFile, size, transparent, brand } });
   };
 
+  const useCleanReference = () => {
+    if (!cleanResult) return;
+    navigate('/convert', {
+      state: {
+        source: 'clean-reference',
+        cleanReferenceId: cleanResult.clean_reference_id,
+        imageUrl: cleanResult.image_url,
+        size,
+        transparent: referenceTreatment === 'subject',
+        brand,
+      },
+    });
+  };
+
   const switchMode = (nextMode: 'text' | 'upload') => {
     setMode(nextMode);
     setStatus('empty');
     setError('');
+    setCleanResult(undefined);
   };
 
   const useCandidate = () => {
@@ -152,24 +181,26 @@ export function AIGeneratePage() {
                 </div>
                 <small>风格化完成后再进入色卡量化和转图纸流程。</small>
               </label>}
-            <div className="info-note flow-explainer"><strong>当前是交互验证版本</strong><span>正式 APP 后端尚未接入图生图。这里会校验模式和主体选择，但不会把直接转图伪装成 AI 风格化结果。</span></div>
+            <div className="info-note flow-explainer"><strong>一次清稿，三档图纸共用</strong><span>后端会先调用一次图生图清稿，再由确定性算法生成 52×52、78×78、104×104 三档图纸，不重复消耗 AI 次数。</span></div>
           </div>}
         <div className={`form-grid ${mode === 'upload' ? 'single-column' : ''}`}>{mode === 'text' && <label className="field-stack"><span>主体类型</span><select><option>宠物</option><option>人物头像</option><option>小动物</option><option>挂饰图案</option></select></label>}<label className="field-stack"><span>品牌色卡</span><select value={brand} onChange={(event) => setBrand(event.target.value as 'Artkal' | 'Mard')}><option value="Artkal">Artkal M 系列</option><option value="Mard">Mard 221 色</option></select><small>转换阶段会匹配所选品牌的真实色号。</small></label></div>
         <div className="field-stack"><span>拼豆板尺寸</span><div className="choice-cards">{['52×52', '78×78', '104×104'].map((item) => <button key={item} className={size === item ? 'is-active' : ''} onClick={() => setSize(item)}><strong>{item}</strong><small>{item === '52×52' ? '轻量挂饰' : item === '78×78' ? '适中细节' : '丰富细节'}</small></button>)}</div><small>尺寸越大，可以保留越多细节，但制作成本也越高。</small></div>
         <div className="switch-card"><div><strong>透明底 / 不规则图形</strong><span>生成干净单主体，背景不参与填豆和数量统计。</span></div><button className={`switch ${transparent ? 'is-on' : ''}`} onClick={() => setTransparent(!transparent)} aria-label="切换透明底"><i /></button></div>
         {transparent && <div className="info-note">开启后，系统会自动去除背景，只保留清晰主体；如果背景过于复杂，会提示你重新生成，避免背景被误算成拼豆。</div>}
         {mode === 'text' && <div className="field-stack"><span>生成数量</span><div className="segmented">{[1, 2, 4].map((item) => <button key={item} className={count === item ? 'is-active' : ''} onClick={() => setCount(item)}>{item} 张</button>)}</div></div>}
-        <Button fullWidth icon={<WandSparkles size={18} />} onClick={generate} disabled={status === 'loading'}>{mode === 'upload' ? '检查并进行 AI 风格化' : status === 'loading' ? '正在调用 AI 服务…' : '生成候选图'}</Button>
+        <Button fullWidth icon={<WandSparkles size={18} />} onClick={generate} disabled={status === 'loading'}>{mode === 'upload' ? 'AI 清稿并继续转图' : status === 'loading' ? '正在调用 AI 服务…' : '生成候选图'}</Button>
         {mode === 'upload' && <button type="button" className="direct-convert-link" onClick={convertReferenceDirectly}>跳过 AI 风格化，直接转为拼豆图纸</button>}
       </section>
       <section className="results-panel panel-card">
         <div className="results-head"><div><span className="eyebrow">{mode === 'upload' ? '参考图处理' : '候选结果'}</span><h2>{mode === 'upload' ? '确认处理方式后再生成' : '选择最接近灵感的一张'}</h2></div>{status === 'done' && <Button variant="ghost" icon={<RefreshCw size={16} />} onClick={generate}>重新生成</Button>}</div>
         {status === 'empty' && (mode === 'upload'
-          ? <EmptyState title="上传图片并选择处理方式" description="主体卡通化只处理已有清晰主体；风景或无主体图片请选择整图风格化。正式图生图接入前，这里不会展示虚假的生成结果。" action={<Button variant="secondary" onClick={generate}>检查当前选择</Button>} />
+          ? <EmptyState title="上传图片并选择处理方式" description="主体模式会提取已有的人物、宠物或物体；整图模式保留完整场景。清稿完成后可继续选择三档图纸。" action={<Button variant="secondary" onClick={generate}>开始 AI 清稿</Button>} />
           : <EmptyState title="生成你的第一组拼豆图案" description="填写描述并选择拼豆友好参数，真实 AI 候选图会出现在这里。" action={<Button variant="secondary" onClick={generate}>使用示例生成</Button>} />)}
         {status === 'loading' && <><LoadingState label="AI 正在生成并处理图片" /><div className="generation-steps"><span className="done">理解描述</span><span className="active">调用通义万相</span><span>透明底质量校验</span></div></>}
         {status === 'error' && <ErrorState title="生成没有完成" description={error} action={<Button variant="secondary" onClick={generate}>重新尝试</Button>} />}
-        {status === 'done' && <><div className="result-grid">{candidates.map((candidate, index) => <button key={candidate.source_path} className={`result-card ${selected === index ? 'is-selected' : ''}`} onClick={() => setSelected(index)}><span className="result-check">{selected === index ? '✓' : ''}</span><div className="generated-art"><img src={resolveApiMediaUrl(candidate.image_url)} alt={`AI 候选图 ${index + 1}`} /></div><footer><span>候选图 {index + 1}</span><small>{size}</small></footer></button>)}</div><div className="result-action"><div><Sparkles /><span><small>已选择候选图 {selected + 1}</small><strong>接下来匹配真实 {brand} 色卡</strong></span></div><Button onClick={useCandidate}>使用这张图并转为拼豆图纸</Button></div></>}
+        {status === 'done' && (mode === 'upload' && cleanResult
+          ? <><div className="clean-reference-result"><div className="generated-art"><img src={resolveApiMediaUrl(cleanResult.image_url)} alt="AI 清稿结果" /></div><div><span className="success-badge">AI 清稿完成</span><h3>准备生成三档图纸</h3><p>算法版本 {cleanResult.algorithm_version} · AI 调用 {cleanResult.ai_passes} 次</p><p>识别为 {cleanResult.source_type === 'subject' ? '独立主体' : '完整场景'}，下一步将匹配真实 {brand} 色卡。</p></div></div><div className="result-action"><div><Sparkles /><span><small>清稿结果已固定</small><strong>52 / 78 / 104 三档共用同一份清稿</strong></span></div><Button onClick={useCleanReference}>选择尺寸并转为图纸</Button></div></>
+          : <><div className="result-grid">{candidates.map((candidate, index) => <button key={candidate.source_path} className={`result-card ${selected === index ? 'is-selected' : ''}`} onClick={() => setSelected(index)}><span className="result-check">{selected === index ? '✓' : ''}</span><div className="generated-art"><img src={resolveApiMediaUrl(candidate.image_url)} alt={`AI 候选图 ${index + 1}`} /></div><footer><span>候选图 {index + 1}</span><small>{size}</small></footer></button>)}</div><div className="result-action"><div><Sparkles /><span><small>已选择候选图 {selected + 1}</small><strong>接下来匹配真实 {brand} 色卡</strong></span></div><Button onClick={useCandidate}>使用这张图并转为拼豆图纸</Button></div></>)}
       </section>
     </div>
     <button className="mobile-sticky-action" onClick={generate} disabled={status === 'loading'}><Sparkles size={18} />{mode === 'upload' ? '检查风格化设置' : '生成候选图'} <ChevronDown size={16} /></button>

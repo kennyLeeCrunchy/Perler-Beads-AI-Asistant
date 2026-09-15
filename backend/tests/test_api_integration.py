@@ -2,13 +2,16 @@ import io
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 from PIL import Image, ImageDraw
 
 import app.api.routes_export as routes_export
+import app.api.routes_ai as routes_ai
 import app.api.routes_pattern as routes_pattern
+import app.core.bundle as bundle
 from app.core.config import MARD_PALETTE_PATH
 from app.core.palette import load_mard_palette
 from app.api_main import app
@@ -23,6 +26,8 @@ class ApiIntegrationTests(unittest.TestCase):
         self.runtime_patches = [
             patch.object(routes_pattern, "RUNTIME_DIR", runtime_path),
             patch.object(routes_export, "RUNTIME_DIR", runtime_path),
+            patch.object(routes_ai, "RUNTIME_DIR", runtime_path),
+            patch.object(bundle, "RUNTIME_DIR", runtime_path),
         ]
         for runtime_patch in self.runtime_patches:
             runtime_patch.start()
@@ -110,6 +115,54 @@ class ApiIntegrationTests(unittest.TestCase):
         self.assertEqual(payload["brand"], "Mard")
         self.assertEqual(len(payload["colors"]), 221)
         self.assertEqual(payload["colors"][0]["code"], "A1")
+
+    def test_bundle_returns_three_sizes_from_one_source(self):
+        source = Image.new("RGB", (64, 64), "white")
+        ImageDraw.Draw(source).ellipse((12, 8, 52, 56), fill="#D96B3B")
+        buffer = io.BytesIO()
+        source.save(buffer, format="PNG")
+
+        response = self.client.post(
+            "/api/pattern/bundle",
+            files={"image": ("bundle.png", buffer.getvalue(), "image/png")},
+            data={"brand": "Mard", "max_colors": "12", "similarity_threshold": "18"},
+        )
+
+        self.assertEqual(response.status_code, 200, response.text)
+        payload = response.json()
+        self.assertEqual(payload["ai_passes"], 0)
+        self.assertEqual([item["width"] for item in payload["variants"]], [52, 78, 104])
+        self.assertEqual([item["height"] for item in payload["variants"]], [52, 78, 104])
+        self.assertTrue(all(item["counts"] for item in payload["variants"]))
+
+    def test_clean_reference_endpoint_preserves_single_pass_contract(self):
+        fake = SimpleNamespace(
+            clean_reference_id="a" * 32,
+            task_id="task-clean",
+            model="wan2.5-i2i-preview",
+            pattern_source_path=Path("a.clean.raw.png"),
+            raw_path=Path("a.clean.raw.png"),
+            prompt_version="bead_ready_52_v2",
+            source_type="scene",
+            confidence=0.7,
+            mask_method=None,
+            foreground_ratio=None,
+        )
+        source = Image.new("RGB", (32, 32), "#D96B3B")
+        buffer = io.BytesIO()
+        source.save(buffer, format="PNG")
+        with patch.object(routes_ai, "create_clean_reference", return_value=fake) as create:
+            response = self.client.post(
+                "/api/ai/clean-reference",
+                files={"image": ("source.png", buffer.getvalue(), "image/png")},
+                data={"mode": "auto"},
+            )
+
+        self.assertEqual(response.status_code, 200, response.text)
+        payload = response.json()
+        self.assertEqual(payload["ai_passes"], 1)
+        self.assertEqual(payload["algorithm_version"], "bead_ready_52_v2")
+        self.assertEqual(create.call_count, 1)
 
 
 if __name__ == "__main__":
