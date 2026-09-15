@@ -1,6 +1,6 @@
 # Perlabo APP
 
-这是公开发布的“小豆点拼豆实验室 Perlabo”应用部分，只包含 Web 前端和 Web/小程序共用的 FastAPI 后端。微信小程序源码与研发验证 Demo 保留在内部仓库，不属于本仓库。
+这是公开发布的“小豆点拼豆实验室 Perlabo”应用部分，只包含 Web 前端和 Web/小程序共用的 FastAPI 后端。
 
 ```text
 APP/
